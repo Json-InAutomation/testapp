@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  {% block head %} {% endblock %} {% block cssextend %} {% endblock %}
+  <!-- WebApp Manifest -->
+  <link rel="manifest" href="{{ url_for('manifest') }}" />
+
+  <!-- Favicon -->
+  <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon" type="image/x-icon" />
+
+  <link rel="apple-touch-icon" sizes="96x96" href="{{ url_for('static', filename='img/launcher-icon-2x.png') }}" />
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='img/launcher-icon-3x.png') }}" />
+  <link rel="apple-touch-icon" sizes="192x192" href="{{ url_for('static', filename='img/launcher-icon-4x.png') }}" />
+
+  <title>{% block title %} {% endblock %}</title>
+  <script src="{{url_for('static',filename='js/socket.io.js')}}"></script>
+</head>
+
+<body>
+  {% if show_navbar %}
+  <nav class="navbar sticky-top navbar-dark bg-transparent">
+    <div class="brand">
+      <a href="#" class="navbar-brand">
+        <img src="{{ url_for('static', filename='img/cxb-rbg.png') }}" alt="cxb-rbg.png" />
+      </a>
+      <button type="button" id="inventory-error-indicator" class="hidden">
+        <svg viewBox="0 0 24 24" width="37px" height="37px" fill="none" xmlns="http://www.w3.org/2000/svg"
+          stroke="none">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M12 16H12.01M12 8V12M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+              stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+      </button>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/"><i class="far fa-list-alt"></i>&nbsp; Drink Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/inventory"><i class="fa fa-cog"></i>&nbsp; Inventory</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cleaning"><i class="fa fa-tint"></i> &nbsp; Cleaning</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin" id="admin-link" style="display: flex; justify-content: space-between">
+            <span><i class="fa fa-wifi"></i>&nbsp; Admin</span>
+            <div id="page-loader" class="hidden">
+              <svg fill="#7D3661" xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 100 100"
+                xml:space="preserve" class="rotating-loader">
+                <g>
+                  <path opacity="0.15" d="M51.5,22h-3c-0.8,0-1.5,0.7-1.5,1.5v13c0,0.8,0.7,1.5,1.5,1.5h3c0.8,0,1.5-0.7,1.5-1.5v-13
+		C53,22.7,52.3,22,51.5,22z" />
+                  <path opacity="0.15" d="M76.5,47h-13c-0.8,0-1.5,0.7-1.5,1.5v3c0,0.8,0.7,1.5,1.5,1.5h13c0.8,0,1.5-0.7,1.5-1.5v-3
+		C78,47.7,77.3,47,76.5,47z" />
+                  <path opacity="0.15" d="M51.5,62h-3c-0.8,0-1.5,0.7-1.5,1.5v13c0,0.8,0.7,1.5,1.5,1.5h3c0.8,0,1.5-0.7,1.5-1.5v-13
+		C53,62.7,52.3,62,51.5,62z" />
+                  <path opacity="0.15" d="M38,51.5v-3c0-0.8-0.7-1.5-1.5-1.5h-13c-0.8,0-1.5,0.7-1.5,1.5v3c0,0.8,0.7,1.5,1.5,1.5h13
+		C37.3,53,38,52.3,38,51.5z" />
+                  <path opacity="0.15" d="M59.5,42.6c0.6,0.6,1.5,0.6,2.1,0l9.2-9.2c0.6-0.6,0.6-1.5,0-2.1l-2.1-2.1c-0.6-0.6-1.5-0.6-2.1,0l-9.2,9.2
+		c-0.6,0.6-0.6,1.5,0,2.1L59.5,42.6z" />
+                  <path opacity="0.15" d="M61.7,57.4c-0.6-0.6-1.5-0.6-2.1,0l-2.1,2.1c-0.6,0.6-0.6,1.5,0,2.1l9.2,9.2c0.6,0.6,1.5,0.6,2.1,0l2.1-2.1
+		c0.6-0.6,0.6-1.5,0-2.1L61.7,57.4z" />
+                  <path opacity="0.15" d="M40.5,57.4c-0.6-0.6-1.5-0.6-2.1,0l-9.2,9.2c-0.6,0.6-0.6,1.5,0,2.1l2.1,2.1c0.6,0.6,1.5,0.6,2.1,0l9.2-9.2
+		c0.6-0.6,0.6-1.5,0-2.1L40.5,57.4z" />
+                  <path opacity="0.15" d="M33.4,29.1c-0.6-0.6-1.5-0.6-2.1,0l-2.1,2.1c-0.6,0.6-0.6,1.5,0,2.1l9.2,9.2c0.6,0.6,1.5,0.6,2.1,0l2.1-2.1
+		c0.6-0.6,0.6-1.5,0-2.1L33.4,29.1z" />
+                </g>
+              </svg>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="loadingAnimation" style="
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+      ">
+    <img src="{{ url_for('static', filename='img/loader-animation.gif') }}" alt="Loading..."
+      style="width: 230px; height: 230px" />
+  </div>
+  <div id="notifyModal" class="notifyModal">
+    <div class="notify-modal-content">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" stroke-width="3"
+        stroke="#66d4f0" fill="none">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path d="M54.89,26.73A23.52,23.52,0,0,1,15.6,49" stroke-linecap="round"></path>
+          <path d="M9,37.17a23.75,23.75,0,0,1-.53-5A23.51,23.51,0,0,1,48.3,15.2" stroke-linecap="round"></path>
+          <polyline points="37.73 16.24 48.62 15.44 47.77 5.24" stroke-linecap="round"></polyline>
+          <polyline points="25.91 47.76 15.03 48.56 15.88 58.76" stroke-linecap="round"></polyline>
+        </g>
+      </svg>
+      <p class="notify-modal-text-info">
+        <span class="bold"> Urgent bottle need to refill </span>
+        <span class="notify-text-info-sub"> </span>
+      </p>
+      <div class="notify-button-group">
+        <button id="sendNotificationBtn">Send</button>
+      </div>
+    </div>
+  </div>
+  <div class="message-container">
+    <div id="success-message" class="hidden message"></div>
+    <div id="error-message" class="hidden message"></div>
+  </div>
+  {% endif %} {% block notify %} {% endblock %} {% block content %} {%
+  endblock %}
+  <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/slider.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+  {% block scripts %} {% endblock %}
+  <script>
+    $(document).ready(function () {
+      // Toggle the arrow on dropdown open/close
+      $("#adminDropdown")
+        .on("show.bs.dropdown", function () {
+          $("#dropdownArrow").css("transform", "rotate(180deg)");
+        })
+        .on("hide.bs.dropdown", function () {
+          $("#dropdownArrow").css("transform", "rotate(0deg)");
+        });
+    });
+  </script>
+
+  <script>
+    document
+      .getElementById("admin-link")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        document.getElementById("page-loader").classList.remove("hidden");
+        window.location.href = this.getAttribute("href");
+      });
+  </script>
+  <script>
+    const socket = io();
+    const quantityErrorIndicator = document.getElementById(
+      "inventory-error-indicator"
+    );
+    let isScaling = true;
+    let errorData = null;
+
+    function startScaling() {
+      intervalId = setInterval(() => {
+        quantityErrorIndicator.style.transform = isScaling
+          ? "scale(1)"
+          : "scale(0.7)";
+        isScaling = !isScaling;
+      }, 700);
+    }
+
+    function stopScaling() {
+      clearInterval(intervalId);
+      quantityErrorIndicator.style.transform = "scale(1)";
+    }
+
+    async function checkQuantityStatus() {
+      try {
+        const response = await fetch("/quantity-status", {
+          method: "GET",
+        });
+
+        const data = await response.json();
+
+        if (data.errormessage && data.errormessage.length > 0) {
+          quantityErrorIndicator.classList.remove("hidden");
+          startScaling();
+          errorData = data.errormessage;
+        } else {
+          quantityErrorIndicator.classList.add("hidden");
+          stopScaling();
+        }
+      } catch (error) {
+        console.error("Error fetching quantity status:", error);
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      checkQuantityStatus();
+    });
+
+    quantityErrorIndicator.addEventListener("click", () => {
+      stopScaling();
+      let errorMessages = errorData.map((item) => {
+        console.log(item);
+        return `The Drink bottles on ${item.pump_number} are running low.`;
+      });
+      document.querySelector(".notify-text-info-sub").innerHTML =
+        errorMessages[0];
+      document.getElementById("notifyModal").style.display = "block";
+    });
+
+    document
+      .getElementById("sendNotificationBtn")
+      .addEventListener("click", () => {
+        socket.emit("sendNotification", {
+          msg: "The level one of the bottles in the CEX02 machine goes down.",
+        });
+        console.log("sendNotification --sent")
+        document.getElementById("notifyModal").style.display = "none";
+      });
+  </script>
+</body>
+
+</html>

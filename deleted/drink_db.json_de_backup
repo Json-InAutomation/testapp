@@ -1,0 +1,590 @@
+{
+    "ingredients": {
+        "Mixer": "mixer",
+        "Vodka": "Vodka",
+        "TripleSec": "Triple Sec",
+        "TonicWater": "TonicWater",
+        "Tequila": "Tequila",
+        "SimpleSyrup": "Simple Syrup",
+        "Rum": "Rum",
+        "OrangeJuice": "Orange Juice",
+        "LemonJuice": "Lemon Juice",
+        "Gin": "Gin",
+        "CranberryJuice": "Cranberry Juice",
+        "Coke": "Coke",
+        "PineappleJuice": "Pineapple Juice",
+        "Curacao": "Curacao",
+        "Malibu": "Malibu"
+    },
+    "drinks": {
+        "BayBreeze": {
+            "name": "Bay Breeze",
+            "description": "Mögen Sie alkoholische Tropengetränke, aber nicht den Geschmack von Rum (der scheint in jedem Tropengetränk enthalten zu sein, oder?)? Dann ist Bay Breeze das richtige Getränk für Sie.",
+            "image": "img/drinks/HawaiianSeaBreeze.png",
+            "ingredients": {
+                "Vodka": 40,
+                "CranberryJuice": 90,
+                "PineappleJuice": 30,
+                "Mixer": 120
+            }
+        },
+        "BayBreezeHalb": {
+            "name": "Bay Breeze - Halb",
+            "description": "Mögen Sie alkoholische Tropengetränke, aber nicht den Geschmack von Rum (der scheint in jedem Tropengetränk enthalten zu sein, oder?)? Dann ist Bay Breeze das richtige Getränk für Sie.",
+            "image": "img/drinks/HawaiianSeaBreeze.png",
+            "ingredients": {
+                "Vodka": 20,
+                "CranberryJuice": 45,
+                "PineappleJuice": 15,
+                "Mixer": 90
+            }
+        },
+        "BayBreezeLeichte": {
+            "name": "Bay Breeze - leichte",
+            "description": "Mögen Sie alkoholische Tropengetränke, aber nicht den Geschmack von Rum (der scheint in jedem Tropengetränk enthalten zu sein, oder?)? Dann ist Bay Breeze das richtige Getränk für Sie.",
+            "image": "img/drinks/HawaiianSeaBreeze.png",
+            "ingredients": {
+                "Vodka": 20,
+                "CranberryJuice": 90,
+                "PineappleJuice": 30,
+                "Mixer": 120
+            }
+        },
+        "AlkoholfreiBayBreeze": {
+            "name": "Alkoholfrei Breeze",
+            "description": "Mögen Sie alkoholische Tropengetränke, aber nicht den Geschmack von Rum (der scheint in jedem Tropengetränk enthalten zu sein, oder?)? Dann ist Bay Breeze das richtige Getränk für Sie.",
+            "image": "img/drinks/HawaiianSeaBreeze.png",
+            "ingredients": {
+                "CranberryJuice": 90,
+                "PineappleJuice": 30,
+                "Mixer": 120
+            }
+        },
+        "BlueHawaii": {
+            "name": "Blue Hawaii",
+            "description": "Es ist ein stilvoller Drink für einen Tag am Strand oder wenn man den Strand im Kopf hat ;-) Dieser Cocktail repräsentiert wahrhaftig den hawaiianischen Lebensstil.",
+            "image": "img/drinks/BlueHawaii.png",
+            "ingredients": {
+                "Rum": 20,
+                "Vodka": 20,
+                "Curacao": 15,
+                "PineappleJuice": 90,
+                "LemonJuice": 15,
+                "SimpleSyrup": 15,
+                "Mixer": 120
+            }
+        },
+        "BlueHawaiiHalb": {
+            "name": "Blue Hawaii - Halb",
+            "description": "Es ist ein stilvoller Drink für einen Tag am Strand oder wenn man den Strand im Kopf hat ;-) Dieser Cocktail repräsentiert wahrhaftig den hawaiianischen Lebensstil.",
+            "image": "img/drinks/BlueHawaii.png",
+            "ingredients": {
+                "Rum": 10,
+                "Vodka": 10,
+                "Curacao": 15,
+                "PineappleJuice": 45,
+                "LemonJuice": 10,
+                "SimpleSyrup": 10,
+                "Mixer": 90
+            }
+        },
+        "BlueHawaiiLeichte": {
+            "name": "Blue Hawaii - Leichte",
+            "description": "Es ist ein stilvoller Drink für einen Tag am Strand oder wenn man den Strand im Kopf hat ;-) Dieser Cocktail repräsentiert wahrhaftig den hawaiianischen Lebensstil.",
+            "image": "img/drinks/BlueHawaii.png",
+            "ingredients": {
+                "Rum": 10,
+                "Vodka": 10,
+                "Curacao": 15,
+                "PineappleJuice": 90,
+                "LemonJuice": 15,
+                "SimpleSyrup": 15,
+                "Mixer": 120
+            }
+        },
+        "AlkoholfreiHawaii": {
+            "name": "Alkoholfrei Hawaii",
+            "description": "Es ist ein stilvoller Drink für einen Tag am Strand oder wenn man den Strand im Kopf hat ;-) Dieser Cocktail repräsentiert wahrhaftig den hawaiianischen Lebensstil.",
+            "image": "img/drinks/BlueHawaii.png",
+            "ingredients": {
+                "PineappleJuice": 90,
+                "LemonJuice": 15,
+                "SimpleSyrup": 15,
+                "Mixer": 120
+            }
+        },
+        "BlueKamikaze": {
+            "name": "Blue Kamikaze",
+            "description": "Er hat einen unglaublich süßen Geschmack voller saftiger Noten, die Bilder von romantischen Sommernächten hervorrufen.",
+            "image": "img/drinks/BlueKamikaze.png",
+            "ingredients": {
+                "Vodka": 50,
+                "Curacao": 50,
+                "LemonJuice": 20,
+                "Mixer": 120
+            }
+        },
+        "BlueKamikazeHalb": {
+            "name": "Blue Kamikaze - Halb",
+            "description": "Er hat einen unglaublich süßen Geschmack voller saftiger Noten, die Bilder von romantischen Sommernächten hervorrufen.",
+            "image": "img/drinks/BlueKamikaze.png",
+            "ingredients": {
+                "Vodka": 25,
+                "Curacao": 25,
+                "LemonJuice": 10,
+                "Mixer": 90
+            }
+        },
+        "BlueKamikazeLeichte": {
+            "name": "Blue Kamikaze - Leichte",
+            "description": "Er hat einen unglaublich süßen Geschmack voller saftiger Noten, die Bilder von romantischen Sommernächten hervorrufen.",
+            "image": "img/drinks/BlueKamikaze.png",
+            "ingredients": {
+                "Vodka": 25,
+                "Curacao": 25,
+                "LemonJuice": 20,
+                "Mixer": 120
+            }
+        },
+        "Caipirinha": {
+            "name": "Caipirinha",
+            "description": "'Kai-Pur-Een-Ya' bedeutet wörtlich übersetzt 'kleines Mädchen vom Lande' und stammt aus dem ländlichen Raum von Sao Paulo. Es ist das Nationalgetränk Brasiliens.",
+            "image": "img/drinks/Caipi.png",
+            "ingredients": {
+                "Rum": 50,
+                "SimpleSyrup": 25,
+                "LemonJuice": 25,
+                "Mixer": 120
+            }
+        },
+        "CaipirinhaHalb": {
+            "name": "Caipirinha - Halb",
+            "description": "'Kai-Pur-Een-Ya' bedeutet wörtlich übersetzt 'kleines Mädchen vom Lande' und stammt aus dem ländlichen Raum von Sao Paulo. Es ist das Nationalgetränk Brasiliens.",
+            "image": "img/drinks/Caipi.png",
+            "ingredients": {
+                "Rum": 25,
+                "SimpleSyrup": 15,
+                "LemonJuice": 15,
+                "Mixer": 90
+            }
+        },
+        "CaipirinhaLeichte": {
+            "name": "Caipirinha - Leichte",
+            "description": "'Kai-Pur-Een-Ya' bedeutet wörtlich übersetzt 'kleines Mädchen vom Lande' und stammt aus dem ländlichen Raum von Sao Paulo. Es ist das Nationalgetränk Brasiliens.",
+            "image": "img/drinks/Caipi.png",
+            "ingredients": {
+                "Rum": 25,
+                "SimpleSyrup": 25,
+                "LemonJuice": 25,
+                "Mixer": 120
+            }
+        },
+        "CapeCod": {
+            "name": "Cape Cod",
+            "description": "Dieses Getränk wurde 1945 von der Genossenschaft der Preiselbeerproduzenten von Ocean Spray unter dem Namen 'Red Devil' entwickelt.",
+            "image": "img/drinks/CapeCod.png",
+            "ingredients": {
+                "Vodka": 40,
+                "CranberryJuice": 90,
+                "Mixer": 120
+            }
+        },
+        "CapeCodHalb": {
+            "name": "Cape Cod - Halb",
+            "description": "Dieses Getränk wurde 1945 von der Genossenschaft der Preiselbeerproduzenten von Ocean Spray unter dem Namen 'Red Devil' entwickelt.",
+            "image": "img/drinks/CapeCod.png",
+            "ingredients": {
+                "Vodka": 20,
+                "CranberryJuice": 45,
+                "Mixer": 90
+            }
+        },
+        "CapeCodLeichte": {
+            "name": "Cape Cod - Leichte",
+            "description": "Dieses Getränk wurde 1945 von der Genossenschaft der Preiselbeerproduzenten von Ocean Spray unter dem Namen 'Red Devil' entwickelt.",
+            "image": "img/drinks/CapeCod.png",
+            "ingredients": {
+                "Vodka": 20,
+                "CranberryJuice": 90,
+                "Mixer": 120
+            }
+        },
+        "Cosmopolitan": {
+            "name": "Cosmopolitan",
+            "description": "Oft auch Cosmo genannt, ist ein wunderschönes rötlich-rosa Juwel von einem Getränk.",
+            "image": "img/drinks/Cosmopolitan.png",
+            "ingredients": {
+                "Vodka": 50,
+                "TripleSec": 25,
+                "LemonJuice": 25,
+                "CranberryJuice": 25,
+                "Mixer": 120
+            }
+        },
+        "CosmopolitanHalb": {
+            "name": "Cosmopolitan - Halb",
+            "description": "Oft auch Cosmo genannt, ist ein wunderschönes rötlich-rosa Juwel von einem Getränk.",
+            "image": "img/drinks/Cosmopolitan.png",
+            "ingredients": {
+                "Vodka": 25,
+                "TripleSec": 15,
+                "LemonJuice": 15,
+                "CranberryJuice": 15,
+                "Mixer": 90
+            }
+        },
+        "CosmopolitanLeichte": {
+            "name": "Cosmopolitan - Leichte",
+            "description": "Oft auch Cosmo genannt, ist ein wunderschönes rötlich-rosa Juwel von einem Getränk.",
+            "image": "img/drinks/Cosmopolitan.png",
+            "ingredients": {
+                "Vodka": 25,
+                "TripleSec": 15,
+                "LemonJuice": 25,
+                "CranberryJuice": 25,
+                "Mixer": 120
+            }
+        },
+        "CultoALaVida": {
+            "name": "Culto A La Vida",
+            "description": "Die wörtliche Übersetzung aus dem Spanischen lautet 'Anbetung des Lebens'. Dieses Getränk wurde von dem Rumhersteller Havana Club entwickelt.",
+            "image": "img/drinks/CultoALaVida.png",
+            "ingredients": {
+                "Rum": 50,
+                "SimpleSyrup": 30,
+                "LemonJuice": 15,
+                "CranberryJuice": 90,
+                "Mixer": 120
+            }
+        },
+        "CultoALaVidaHalb": {
+            "name": "Culto A La Vida - Halb",
+            "description": "Die wörtliche Übersetzung aus dem Spanischen lautet 'Anbetung des Lebens'. Dieses Getränk wurde von dem Rumhersteller Havana Club entwickelt.",
+            "image": "img/drinks/CultoALaVida.png",
+            "ingredients": {
+                "Rum": 25,
+                "SimpleSyrup": 15,
+                "LemonJuice": 10,
+                "CranberryJuice": 45,
+                "Mixer": 90
+            }
+        },
+        "CultoALaVidaLeichte": {
+            "name": "CultoALaVida Leichte",
+            "description": "Die wörtliche Übersetzung aus dem Spanischen lautet 'Anbetung des Lebens'. Dieses Getränk wurde von dem Rumhersteller Havana Club entwickelt.",
+            "image": "img/drinks/CultoALaVida.png",
+            "ingredients": {
+                "Rum": 25,
+                "SimpleSyrup": 30,
+                "LemonJuice": 15,
+                "CranberryJuice": 90,
+                "Mixer": 120
+            }
+        },
+        "Daiquiri": {
+            "name": "Daiquiri",
+            "description": "Er wurde um 1900 in einer Bar namens Venus in Santiago von einer Gruppe amerikanischer Bergbauingenieure erfunden. Der Daiquiri war eines der Lieblingsgetränke von Präsident John F. Kennedy.",
+            "image": "img/drinks/Daiquiri.png",
+            "ingredients": {
+                "Rum": 50,
+                "LemonJuice": 25,
+                "SimpleSyrup": 20,
+                "Mixer": 120
+            }
+        },
+        "DaiquiriHalb": {
+            "name": "Daiquiri-Halb",
+            "description": "Er wurde um 1900 in einer Bar namens Venus in Santiago von einer Gruppe amerikanischer Bergbauingenieure erfunden. Der Daiquiri war eines der Lieblingsgetränke von Präsident John F. Kennedy.",
+            "image": "img/drinks/Daiquiri.png",
+            "ingredients": {
+                "Rum": 25,
+                "LemonJuice": 15,
+                "SimpleSyrup": 10,
+                "Mixer": 90
+            }
+        },
+        "DaiquiriLeichte": {
+            "name": "Daiquiri-Leichte",
+            "description": "Er wurde um 1900 in einer Bar namens Venus in Santiago von einer Gruppe amerikanischer Bergbauingenieure erfunden. Der Daiquiri war eines der Lieblingsgetränke von Präsident John F. Kennedy.",
+            "image": "img/drinks/Daiquiri.png",
+            "ingredients": {
+                "Rum": 25,
+                "LemonJuice": 25,
+                "SimpleSyrup": 20,
+                "Mixer": 120
+            }
+        },
+        "VodkaGimlet": {
+            "name": "Vodka Gimlet",
+            "description": "Eine beliebte Variante des klassischen Gimlet, bei der Wodka anstelle von Gin verwendet wird.",
+            "image": "img/drinks/VodkaGimlet.png",
+            "ingredients": {
+                "Vodka": 50,
+                "LemonJuice": 25,
+                "SimpleSyrup": 25,
+                "Mixer": 120
+            }
+        },
+        "VodkaGimletHalb": {
+            "name": "Vodka Gimlet - Halb",
+            "description": "Eine beliebte Variante des klassischen Gimlet, bei der Wodka anstelle von Gin verwendet wird.",
+            "image": "img/drinks/VodkaGimlet.png",
+            "ingredients": {
+                "Vodka": 25,
+                "LemonJuice": 15,
+                "SimpleSyrup": 15,
+                "Mixer": 90
+            }
+        },
+        "VodkaGimletLeichte": {
+            "name": "Vodka Gimlet - Leichte",
+            "description": "Eine beliebte Variante des klassischen Gimlet, bei der Wodka anstelle von Gin verwendet wird.",
+            "image": "img/drinks/VodkaGimlet.png",
+            "ingredients": {
+                "Vodka": 25,
+                "LemonJuice": 25,
+                "SimpleSyrup": 25,
+                "Mixer": 120
+            }
+        },
+        "Kamikaze": {
+            "name": "Kamikaze",
+            "description": "Der Kamikaze ist ein historisches Getränk, ein Destillat aus Eleganz und üppigen Düften.",
+            "image": "img/drinks/Kamikaze.png",
+            "ingredients": {
+                "Vodka": 30,
+                "TripleSec": 30,
+                "LemonJuice": 30,
+                "Mixer": 120
+            }
+        },
+        "KamikazeHalb": {
+            "name": "Kamikaze - Halb",
+            "description": "Der Kamikaze ist ein historisches Getränk, ein Destillat aus Eleganz und üppigen Düften.",
+            "image": "img/drinks/Kamikaze.png",
+            "ingredients": {
+                "Vodka": 15,
+                "TripleSec": 15,
+                "LemonJuice": 15,
+                "Mixer": 90
+            }
+        },
+        "KamikazeLeichte": {
+            "name": "Kamikaze - Leichte",
+            "description": "Der Kamikaze ist ein historisches Getränk, ein Destillat aus Eleganz und üppigen Düften.",
+            "image": "img/drinks/Kamikaze.png",
+            "ingredients": {
+                "Vodka": 15,
+                "TripleSec": 15,
+                "LemonJuice": 30,
+                "Mixer": 120
+            }
+        },
+        "LemonDrop": {
+            "name": "Lemon Drop",
+            "description": "Ein gutes Dessertgetränk. Sie lieben Zitronenbonbons oder Zitronenkuchen? Dann ist der 'Lemon Drop' Ihr Seelenverwandter unter den Cocktails!",
+            "image": "img/drinks/LemonDrop.png",
+            "ingredients": {
+                "Vodka": 50,
+                "LemonJuice": 25,
+                "SimpleSyrup": 20,
+                "Mixer": 120
+            }
+        },
+        "LemonDropHalb": {
+            "name": "Lemon Drop - Halb",
+            "description": "Ein gutes Dessertgetränk. Sie lieben Zitronenbonbons oder Zitronenkuchen? Dann ist der 'Lemon Drop' Ihr Seelenverwandter unter den Cocktails!",
+            "image": "img/drinks/LemonDrop.png",
+            "ingredients": {
+                "Vodka": 25,
+                "LemonJuice": 15,
+                "SimpleSyrup": 10,
+                "Mixer": 90
+            }
+        },
+        "LemonDropLeichte": {
+            "name": "Lemon Drop - Leichte",
+            "description": "Ein gutes Dessertgetränk. Sie lieben Zitronenbonbons oder Zitronenkuchen? Dann ist der 'Lemon Drop' Ihr Seelenverwandter unter den Cocktails!",
+            "image": "img/drinks/LemonDrop.png",
+            "ingredients": {
+                "Vodka": 25,
+                "LemonJuice": 25,
+                "SimpleSyrup": 20,
+                "Mixer": 120
+            }
+        },
+        "MalibuBayBreeze": {
+            "name": "Malibu Bay Breeze",
+            "description": "Wenn es einen perfekten Ganzjahrescocktail gibt, dann ist es dieser. Er hat erfrischende Aromen aus den Tropen und Cranberrys, die an den Herbst erinnern.",
+            "image": "img/drinks/MalibuBayBreeze.png",
+            "ingredients": {
+                "Malibu": 50,
+                "PineappleJuice": 50,
+                "CranberryJuice": 50,
+                "Mixer": 120
+            }
+        },
+        "MalibuBayBreezeHalb": {
+            "name": "Malibu Bay Breeze - Halb",
+            "description": "Wenn es einen perfekten Ganzjahrescocktail gibt, dann ist es dieser. Er hat erfrischende Aromen aus den Tropen und Cranberrys, die an den Herbst erinnern.",
+            "image": "img/drinks/MalibuBayBreeze.png",
+            "ingredients": {
+                "Malibu": 25,
+                "PineappleJuice": 25,
+                "CranberryJuice": 25,
+                "Mixer": 90
+            }
+        },
+        "MalibuBayBreezeLeichte": {
+            "name": "Malibu Bay Breeze - Leichte",
+            "description": "Wenn es einen perfekten Ganzjahrescocktail gibt, dann ist es dieser. Er hat erfrischende Aromen aus den Tropen und Cranberrys, die an den Herbst erinnern.",
+            "image": "img/drinks/MalibuBayBreeze.png",
+            "ingredients": {
+                "Malibu": 25,
+                "PineappleJuice": 50,
+                "CranberryJuice": 50,
+                "Mixer": 120
+            }
+        },
+        "Screwdriver": {
+            "name": "Screwdriver",
+            "description": "Angeblich erhielt das Getränk seinen Namen, weil amerikanische Erdölingenieure in Saudi-Arabien heimlich Wodka in kleine Dosen Orangensaft gaben und die Mischung mit ihren Schraubenziehern umrührten.",
+            "image": "img/drinks/Screwdriver.png",
+            "ingredients": {
+                "Vodka": 50,
+                "OrangeJuice": 100,
+                "Mixer": 120
+            }
+        },
+        "ScrewdriverHalb": {
+            "name": "Screwdriver - Halb",
+            "description": "Angeblich erhielt das Getränk seinen Namen, weil amerikanische Erdölingenieure in Saudi-Arabien heimlich Wodka in kleine Dosen Orangensaft gaben und die Mischung mit ihren Schraubenziehern umrührten.",
+            "image": "img/drinks/Screwdriver.png",
+            "ingredients": {
+                "Vodka": 25,
+                "OrangeJuice": 50,
+                "Mixer": 90
+            }
+        },
+        "ScrewdriverLeichte": {
+            "name": "Screwdriver - Leichte",
+            "description": "Angeblich erhielt das Getränk seinen Namen, weil amerikanische Erdölingenieure in Saudi-Arabien heimlich Wodka in kleine Dosen Orangensaft gaben und die Mischung mit ihren Schraubenziehern umrührten.",
+            "image": "img/drinks/Screwdriver.png",
+            "ingredients": {
+                "Vodka": 25,
+                "OrangeJuice": 100,
+                "Mixer": 120
+            }
+        },
+        "Madras": {
+            "name": "Madras",
+            "description": "Der Name des Getränks ist von dem karierten Tuch inspiriert, das seinen Ursprung in der indischen Stadt Madras hat, die heute als Chennai bekannt ist.",
+            "image": "img/drinks/Madras.png",
+            "ingredients": {
+                "Vodka": 50,
+                "CranberryJuice": 75,
+                "OrangeJuice": 25,
+                "Mixer": 120
+            }
+        },
+        "MadrasHalb": {
+            "name": "Madras - Halb",
+            "description": "Der Name des Getränks ist von dem karierten Tuch inspiriert, das seinen Ursprung in der indischen Stadt Madras hat, die heute als Chennai bekannt ist.",
+            "image": "img/drinks/Madras.png",
+            "ingredients": {
+                "Vodka": 25,
+                "CranberryJuice": 40,
+                "OrangeJuice": 15,
+                "Mixer": 90
+            }
+        },
+        "MadrasLeichte": {
+            "name": "Madras - Leichte",
+            "description": "Der Name des Getränks ist von dem karierten Tuch inspiriert, das seinen Ursprung in der indischen Stadt Madras hat, die heute als Chennai bekannt ist.",
+            "image": "img/drinks/Madras.png",
+            "ingredients": {
+                "Vodka": 25,
+                "CranberryJuice": 75,
+                "OrangeJuice": 25,
+                "Mixer": 120
+            }
+        },
+        "VodkaSour": {
+            "name": "Vodka Sour",
+            "description": "Der britischen Marine wird die Popularisierung, wenn nicht sogar die Erfindung des Sour zugeschrieben. Der erste Bericht über einen Sour stammt aus dem Jahr 1856. Dies ist die Wodka-Variante von Sour.",
+            "image": "img/drinks/VodkaSour.png",
+            "ingredients": {
+                "Vodka": 50,
+                "SimpleSyrup": 25,
+                "LemonJuice": 25,
+                "Mixer": 120
+            }
+        },
+        "VodkaSourHalb": {
+            "name": "Vodka Sour - Halb",
+            "description": "Der britischen Marine wird die Popularisierung, wenn nicht sogar die Erfindung des Sour zugeschrieben. Der erste Bericht über einen Sour stammt aus dem Jahr 1856. Dies ist die Wodka-Variante von Sour.",
+            "image": "img/drinks/VodkaSour.png",
+            "ingredients": {
+                "Vodka": 25,
+                "SimpleSyrup": 15,
+                "LemonJuice": 15,
+                "Mixer": 90
+            }
+        },
+        "VodkaSourLeichte": {
+            "name": "Vodka Sour - Leichte",
+            "description": "Der britischen Marine wird die Popularisierung, wenn nicht sogar die Erfindung des Sour zugeschrieben. Der erste Bericht über einen Sour stammt aus dem Jahr 1856. Dies ist die Wodka-Variante von Sour.",
+            "image": "img/drinks/VodkaSour.png",
+            "ingredients": {
+                "Vodka": 25,
+                "SimpleSyrup": 25,
+                "LemonJuice": 25,
+                "Mixer": 120
+            }
+        },
+        "VodkaSidecar": {
+            "name": "Vodka Sidecar",
+            "description": "Er ist süß-säuerlich und spritzig, eine Abwandlung des klassischen Cocktails mit Wodka anstelle von Brandy.",
+            "image": "img/drinks/VodkaSidecar.png",
+            "ingredients": {
+                "Vodka": 50,
+                "TripleSec": 25,
+                "LemonJuice": 25,
+                "Mixer": 120
+            }
+        },
+        "VodkaSidecarHalb": {
+            "name": "Vodka Sidecar - Halb",
+            "description": "Er ist süß-säuerlich und spritzig, eine Abwandlung des klassischen Cocktails mit Wodka anstelle von Brandy.",
+            "image": "img/drinks/VodkaSidecar.png",
+            "ingredients": {
+                "Vodka": 25,
+                "TripleSec": 15,
+                "LemonJuice": 15,
+                "Mixer": 90
+            }
+        },
+        "VodkaSidecarLeichte": {
+            "name": "Vodka Sidecar - Leichte",
+            "description": "Er ist süß-säuerlich und spritzig, eine Abwandlung des klassischen Cocktails mit Wodka anstelle von Brandy.",
+            "image": "img/drinks/VodkaSidecar.png",
+            "ingredients": {
+                "Vodka": 25,
+                "TripleSec": 25,
+                "LemonJuice": 25,
+                "Mixer": 120
+            }
+        },
+        "WhiteLady": {
+            "name": "White Lady",
+            "description": "Das Originalrezept für die White Lady wurde 1919 von Harry MacElhone in Ciro's Club in London entwickelt. Dieser Cocktail ist auch als Delilah oder Chelsea Side-Car bekannt.",
+            "image": "img/drinks/HawaiianSeaBreeze.png",
+            "ingredients": {
+                "Gin": 40,
+                "TripleSec": 25,
+                "LemonJuice": 25,
+                "Mixer": 120
+            }
+        }
+    }
+}

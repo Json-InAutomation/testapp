@@ -1,0 +1,70 @@
+{
+  "ingredients": {
+    "Mixer": "mixer",
+    "ingr1": "ingr1",
+    "ingr2": "ingr2",
+    "ingr3": "ingr3",
+    "ingr4": "ingr4",
+    "ingr5": "ingr5",
+    "ingr6": "ingr6",
+    "ingr7": "ingr7",
+    "ingr8": "ingr8",
+    "ingr9": "ingr9",
+    "ingr10": "ingr10",
+    "ingr11": "ingr11",
+    "ingr12": "ingr12",
+    "ingr13": "ingr13",
+    "ingr14": "ingr14",
+    "ingr15": "ingr15"
+  },
+  "drinks": {
+    "Test-1": {
+      "name": "Test-1",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/BayBreeze-1.png",
+        "drinkDespenseImage": "img/drinks/BayBreeze-2.png"
+      },
+      "ingredients": {
+        "ingr1": 20,
+        "ingr2": 25,
+        "ingr3": 30,
+        "ingr4": 35,
+        "ingr5": 40,
+        "Mixer": 45
+      }
+    },
+    "Test-2": {
+      "name": "Test-2",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/Acapulco-1.png",
+        "drinkDespenseImage": "img/drinks/Acapulco-2.png"
+      },
+      "ingredients": {
+        "ingr6": 20,
+        "ingr7": 25,
+        "ingr8": 30,
+        "ingr9": 35,
+        "ingr10": 40,
+        "Mixer": 45
+      }
+    },
+    "Test-3": {
+      "name": "Test-3",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/Ambassador-1.png",
+        "drinkDespenseImage": "img/drinks/Ambassador-2.png"
+      },
+      "ingredients": {
+        "ingr11": 20,
+        "ingr12": 25,
+        "ingr13": 30,
+        "ingr14": 35,
+        "ingr15": 40,
+        "Mixer": 45
+      }
+    }
+  }
+}

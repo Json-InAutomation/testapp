@@ -1,0 +1,322 @@
+{
+  "ingredients": {
+    "Mixer": "mixer",
+    "Default": "Default",
+    "Gin": "Gin",
+    "Vodka": "Vodka",
+    "Rum": "Rum",
+    "Tequila": "Tequila",
+    "TripleSec": "Triple Sec",
+    "Curacao": "Curacao",
+    "Midori": "Midori",
+    "PeachSchnapps": "Peach Schnapps",
+    "SimpleSyrup": "Simple Syrup",
+    "LemonJuice": "Lemon Juice",
+    "OrangeJuice": "Orange Juice",
+    "PineappleJuice": "Pineapple Juice",
+    "CranberryJuice": "Cranberry Juice",
+    "GrapefruitJuice": "Grapefruit Juice",
+    "GingerBeer": "Ginger Beer"
+  },
+  "drinks": {
+    "BayBreeze": {
+      "name": "Bay Breeze",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/BayBreeze-1.png",
+        "drinkDespenseImage": "img/drinks/BayBreeze-2.png"
+      },
+      "ingredients": {
+        "Vodka": 40,
+        "CranberryJuice": 30,
+        "PineappleJuice": 30,
+        "Mixer": 90
+      }
+    },
+    "Acapulco": {
+      "name": "Acapulco",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/Acapulco-1.png",
+        "drinkDespenseImage": "img/drinks/Acapulco-2.png"
+      },
+      "ingredients": {
+        "Tequila": 50,
+        "Rum": 50,
+        "PineappleJuice": 75,
+        "GrapefruitJuice": 50,
+        "Mixer": 100
+      }
+    },
+    "Ambassador": {
+      "name": "Ambassador",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/Ambassador-1.png",
+        "drinkDespenseImage": "img/drinks/Ambassador-2.png"
+      },
+      "ingredients": {
+        "Tequila": 30,
+        "OrangeJuice": 50,
+        "SimpleSyrup": 15,
+        "Mixer": 60
+      }
+    },
+    "BlueHawaii": {
+      "name": "Blue Hawaii",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/BlueHawaii-1.png",
+        "drinkDespenseImage": "img/drinks/BlueHawaii-2.png"
+      },
+      "ingredients": {
+        "Rum": 20,
+        "Vodka": 20,
+        "Curacao": 15,
+        "PineappleJuice": 90,
+        "LemonJuice": 15,
+        "SimpleSyrup": 15,
+        "Mixer": 100
+      }
+    },
+    "BlueOcean": {
+      "name": "Blue Ocean",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/BlueOcean-1.png",
+        "drinkDespenseImage": "img/drinks/BlueOcean-2.png"
+      },
+      "ingredients": {
+        "Vodka": 30,
+        "Curacao": 15,
+        "SimpleSyrup": 25,
+        "GrapefruitJuice": 30,
+        "Mixer": 50
+      }
+    },
+    "RumBuck": {
+      "name": "Rum Buck",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/RumBuck-1.png",
+        "drinkDespenseImage": "img/drinks/RumBuck-2.png"
+      },
+      "ingredients": {
+        "Rum": 50,
+        "GingerAle": 100,
+        "LemonJuice": 25,
+        "Mixer": 110
+      }
+    },
+    "Caipirinha": {
+      "name": "Caipirinha",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/Caipirinha-1.png",
+        "drinkDespenseImage": "img/drinks/Caipirinha-2.png"
+      },
+      "ingredients": {
+        "Rum": 50,
+        "SimpleSyrup": 40,
+        "LemonJuice": 25,
+        "Mixer": 60
+      }
+    },
+    "CapeCod": {
+      "name": "Cape Cod",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/CapeCod-1.png",
+        "drinkDespenseImage": "img/drinks/CapeCod-2.png"
+      },
+      "ingredients": {
+        "Vodka": 40,
+        "CranberryJuice": 100,
+        "Mixer": 110
+      }
+    },
+    "Cosmopolitan": {
+      "name": "Cosmopolitan",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/Cosmopolitan-1.png",
+        "drinkDespenseImage": "img/drinks/Cosmopolitan-2.png"
+      },
+      "ingredients": {
+        "Vodka": 30,
+        "TripleSec": 15,
+        "LemonJuice": 15,
+        "CranberryJuice": 30,
+        "Mixer": 50
+      }
+    },
+    "CultoALaVida": {
+      "name": "Culto A La Vida",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/CultoALaVida-1.png",
+        "drinkDespenseImage": "img/drinks/CultoALaVida-2.png"
+      },
+      "ingredients": {
+        "Rum": 50,
+        "SimpleSyrup": 15,
+        "LemonJuice": 15,
+        "CranberryJuice": 100,
+        "Mixer": 110
+      }
+    },
+    "Daiquiri": {
+      "name": "Daiquiri",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/Daiquiri-1.png",
+        "drinkDespenseImage": "img/drinks/Daiquiri-2.png"
+      },
+      "ingredients": {
+        "Rum": 50,
+        "LemonJuice": 20,
+        "SimpleSyrup": 15,
+        "Mixer": 60
+      }
+    },
+    "FuzzyNavel": {
+      "name": "Fuzzy Navel",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/FuzzyNavel-1.png",
+        "drinkDespenseImage": "img/drinks/FuzzyNavel-2.png"
+      },
+      "ingredients": {
+        "PeachSchnapps": 50,
+        "OrangeJuice": 100,
+        "Mixer": 60
+      }
+    },
+    "Gimlet": {
+      "name": "Gimlet",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/Gimlet-1.png",
+        "drinkDespenseImage": "img/drinks/Gimlet-2.png"
+      },
+      "ingredients": {
+        "Vodka": 50,
+        "LemonJuice": 20,
+        "SimpleSyrup": 20,
+        "Mixer": 60
+      }
+    },
+    "Greyhound": {
+      "name": "Greyhound",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/Greyhound-1.png",
+        "drinkDespenseImage": "img/drinks/Greyhound-2.png"
+      },
+      "ingredients": {
+        "Gin": 30,
+        "LemonJuice": 15,
+        "GrapefruitJuice": 100,
+        "Mixer": 110
+      }
+    },
+    "JapaneseSlipper": {
+      "name": "Japanese Slipper",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/JapaneseSlipper-1.png",
+        "drinkDespenseImage": "img/drinks/JapaneseSlipper-2.png"
+      },
+      "ingredients": {
+        "Midori": 30,
+        "TripleSec": 30,
+        "LemonJuice": 30,
+        "Mixer": 50
+      }
+    },
+    "Kamikaze": {
+      "name": "Kamikaze",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/Kamikaze-1.png",
+        "drinkDespenseImage": "img/drinks/Kamikaze-2.png"
+      },
+      "ingredients": {
+        "Vodka": 30,
+        "TripleSec": 30,
+        "LemonJuice": 30,
+        "Mixer": 50
+      }
+    },
+    "Screwdriver": {
+      "name": "Screwdriver",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/Screwdriver-1.png",
+        "drinkDespenseImage": "img/drinks/Screwdriver-2.png"
+      },
+      "ingredients": {
+        "Vodka": 50,
+        "OrangeJuice": 100,
+        "Mixer": 110
+      }
+    },
+    "Madras": {
+      "name": "Madras",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/Madras-1.png",
+        "drinkDespenseImage": "img/drinks/Madras-2.png"
+      },
+      "ingredients": {
+        "Vodka": 40,
+        "CranberryJuice": 75,
+        "OrangeJuice": 25,
+        "Mixer": 85
+      }
+    },
+    "Ipanema": {
+      "name": "Ipanema",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/Ipanema-1.png",
+        "drinkDespenseImage": "img/drinks/Ipanema-2.png"
+      },
+      "ingredients": {
+        "GingerAle": 100,
+        "SimpleSyrup": 20,
+        "LemonJuice": 25,
+        "Mixer": 100
+      }
+    },
+    "SexOnTheBeach": {
+      "name": "Sex on the Beach",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/SOTB-1.png",
+        "drinkDespenseImage": "img/drinks/SOTB-2.png"
+      },
+      "ingredients": {
+        "PeachSchnapps": 20,
+        "Vodka": 40,
+        "OrangeJuice": 40,
+        "CranberryJuice": 40,
+        "Mixer": 70
+      }
+    },
+    "Margarita": {
+      "name": "Margarita",
+      "description": "",
+      "image": {
+        "drinkMainImage": "img/drinks/Margarita-1.png",
+        "drinkDespenseImage": "img/drinks/Margarita-2.png"
+      },
+      "ingredients": {
+        "Tequila": 50,
+        "TripleSec": 30,
+        "LemonJuice": 20,
+        "Mixer": 50
+      }
+    }
+  }
+}

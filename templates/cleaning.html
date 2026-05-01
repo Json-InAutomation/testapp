@@ -1,0 +1,203 @@
+{% extends 'base.html' %} {% block title %} Settings & Admin {% endblock %} {%
+block cssextend %}
+<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+{% endblock %} {% block content %}
+<div class="container clean-container">
+  <!-- Settings Success -->
+  {% if (action == "settings") and (errorcode == 0) %}
+  <div id="alertMessage" class="alert alert-success">
+    <b> Settings Updated Successfully.</b>
+  </div>
+  {% elif (action == "settings") and (errorcode == 1) %}
+  <div id="alertMessage" class="alert alert-danger">
+    {% for index in errormessage %}
+    <b>{{ index }}</b><br />
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Clean Function Card -->
+  <form name="input" action="/cleaning/pump/clean" method="POST">
+    <div class="card">
+      <div class="card-header">Cleaning</div>
+      <div class="card-body">
+        <p class="pump-clean-card">
+          Select the group of pumps to clean, then touch Start Cleaning. The
+          selected group of pumps will turn on to flush the existing liquid from
+          the tubes. It is recommended to take the tubes out of the water source
+          halfway through to remove all liquid from the pumps. Important: make
+          sure you have a glass under the funnel to catch the flushed-out
+          liquid.
+        </p>
+        <div class="form-group">
+          <select class="form-control" id="clean" name="clean_group">
+            <option selected value="all">Clean ALL</option>
+            <option value="non_alcoholic">
+              Clean Non-Alcoholic Pumps (1-7)
+            </option>
+            <option value="alcoholic">Clean Alcoholic Pumps (8-15)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success btn-sm btn-start-cleaning" disabled disabled
+          data-tooltip="Cleaning is not allowed at the moment">
+          Start Cleaning
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="back-button">
+    <a href="/" class="panel-btn" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" height="50px" width="50px" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M14.2893 5.70708C13.8988 5.31655 13.2657 5.31655 12.8751 5.70708L7.98768 10.5993C7.20729 11.3805 7.2076 12.6463 7.98837 13.427L12.8787 18.3174C13.2693 18.7079 13.9024 18.7079 14.293 18.3174C14.6835 17.9269 14.6835 17.2937 14.293 16.9032L10.1073 12.7175C9.71678 12.327 9.71678 11.6939 10.1073 11.3033L14.2893 7.12129C14.6799 6.73077 14.6799 6.0976 14.2893 5.70708Z">
+          </path>
+        </g>
+      </svg>
+    </a>
+  </div>
+  <br />
+
+  {% endblock %} {% block scripts %}
+  <script src="{{ url_for('static', filename='js/inventory.js') }}"></script>
+
+  <script id="quantity-data" type="application/json">
+    {{ settings['quantity'] | tojson | safe }}
+  </script>
+
+  <script id="percentage-data" type="application/json">
+    {{ settings['percentage']|tojson|safe }}
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const intervalId = setInterval(async () => {
+        try {
+          const irSensorResponse = await fetch("/ir-sensor-detection");
+          const data = await irSensorResponse.json();
+          const buttons = document.querySelectorAll(".btn-start-cleaning");
+          if (window.location.pathname === "/cleaning") {
+            const errorMessageElement =
+              document.getElementById("error-message");
+            buttons.forEach((button) => {
+              if (data.sensor_results == 0) {
+                button.disabled = true;
+                button.style.setProperty(
+                  "background-color",
+                  "#975E81",
+                  "important"
+                );
+                button.style.cursor = "not-allowed";
+                document.querySelector(".message-container").style.display =
+                  "block";
+                errorMessageElement.classList.remove("hidden");
+                errorMessageElement.innerHTML =
+                  "Please make sure you have placed the mixer.";
+              } else {
+                button.disabled = false;
+                button.style.cursor = "Pointer";
+                document.querySelector(".message-container").style.display =
+                  "none";
+                button.style.setProperty(
+                  "background-color",
+                  "#7D3661",
+                  "important"
+                );
+                errorMessageElement.classList.add("hidden");
+              }
+            });
+          }
+        } catch (error) {
+          console.error("Error checking IR sensor:", error);
+        }
+      }, 500);
+    });
+  </script>
+  <script>
+    setTimeout(function () {
+      var alertmessage = document.getElementById("alertMessage");
+      alertmessage.classList.add("hidden");
+      alertmessage.classList.remove("show-message");
+    }, 5000);
+    document.addEventListener("DOMContentLoaded", function () {
+      const quantityData = JSON.parse(
+        document.getElementById("quantity-data").textContent
+      );
+      const percentageData = JSON.parse(
+        document.getElementById("percentage-data").textContent
+      );
+
+      function updateProgress(pumpNumber, percentage) {
+        const progressBar = document.getElementById(`progress_${pumpNumber}`);
+
+        if (progressBar) {
+          progressBar.style.width = `${percentage}%`;
+
+          if (percentage <= 20) {
+            progressBar.style.backgroundColor = "red";
+          } else if (percentage > 20 && percentage <= 50) {
+            progressBar.style.backgroundColor = "orange";
+          } else {
+            progressBar.style.backgroundColor = "green";
+          }
+
+          progressBar.innerText = `${Math.round(percentage)}%`;
+          progressBar.setAttribute("aria-valuenow", Math.round(percentage));
+        }
+      }
+
+      for (const [pumpNumber, percentage] of Object.entries(percentageData)) {
+        updateProgress(pumpNumber, percentage);
+      }
+    });
+  </script>
+  <script>
+    document.querySelectorAll(".custom-dropdown").forEach((select) => {
+      const selectedOption = select.querySelector(".selected-option");
+      const optionsContainer = select.querySelector(".options-container");
+      const hiddenInput = select.querySelector('input[type="hidden"]');
+
+      const toggleArrows = (isOpen) => {
+        selectedOption.querySelector(".down-arrow").style.display = isOpen
+          ? "none"
+          : "block";
+        selectedOption.querySelector(".up-arrow").style.display = isOpen
+          ? "block"
+          : "none";
+      };
+
+      selectedOption.addEventListener("click", () => {
+        const isOpen = optionsContainer.style.display === "block";
+        optionsContainer.style.display = isOpen ? "none" : "block";
+        toggleArrows(!isOpen);
+      });
+
+      select.querySelectorAll(".option").forEach((option) => {
+        option.addEventListener("click", () => {
+          if (option.style.pointerEvents !== "none") {
+            // Check if not disabled
+            selectedOption.querySelector("span").textContent =
+              option.textContent;
+            selectedOption.setAttribute(
+              "data-value",
+              option.getAttribute("data-value")
+            );
+            hiddenInput.value = option.getAttribute("data-value");
+            toggleArrows(false);
+            optionsContainer.style.display = "none";
+          }
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!select.contains(event.target)) {
+          optionsContainer.style.display = "none";
+          toggleArrows(false);
+        }
+      });
+    });
+  </script>
+
+  {% endblock %}
+</div>

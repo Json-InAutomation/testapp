@@ -1,0 +1,1 @@
+{"status": {"active": 1, "progress": 80, "waiting": 0, "wait_time": 0, "active_pumps": ["pump_04", "pump_05", "pump_16"]}, "control": {"start": 1, "pause": 0, "stop": 0, "clean": "", "drink_name": "Test-1", "infinite_mode": 1, "infinite_drinks": ["Test-1", "Test-2", "Test-3"], "infinite_index": 1}}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  {% block head %} {% endblock %} {% block cssextend %} {% endblock %}
+  <!-- WebApp Manifest -->
+  <link rel="manifest" href="{{ url_for('manifest') }}" />
+
+  <!-- Favicon -->
+  <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon" type="image/x-icon" />
+
+  <link rel="apple-touch-icon" sizes="96x96" href="{{ url_for('static', filename='img/launcher-icon-2x.png') }}" />
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='img/launcher-icon-3x.png') }}" />
+  <link rel="apple-touch-icon" sizes="192x192" href="{{ url_for('static', filename='img/launcher-icon-4x.png') }}" />
+
+  <title>Simulation</title>
+  <script src="{{url_for('static',filename='js/socket.io.js')}}"></script>
+</head>
+
+<body>
+  {% if show_navbar %}
+  <nav class="navbar sticky-top navbar-dark bg-transparent">
+    <div class="brand">
+      <a href="#" class="navbar-brand">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="cxb-rbg.png" />
+      </a>
+    </div>
+  </nav>
+
+  <div class="message-container">
+    <div id="success-message" class="hidden message"></div>
+    <div id="error-message" class="hidden message"></div>
+  </div>
+  {% endif %} {% block notify %} {% endblock %} {% block content %} {%
+  endblock %}
+  <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/slider.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+  {% block scripts %} {% endblock %}
+  <script>
+    $(document).ready(function () {
+      // Toggle the arrow on dropdown open/close
+      $("#adminDropdown")
+        .on("show.bs.dropdown", function () {
+          $("#dropdownArrow").css("transform", "rotate(180deg)");
+        })
+        .on("hide.bs.dropdown", function () {
+          $("#dropdownArrow").css("transform", "rotate(0deg)");
+        });
+    });
+  </script>
+
+  <script>
+    document
+      .getElementById("admin-link")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        document.getElementById("page-loader").classList.remove("hidden");
+        window.location.href = this.getAttribute("href");
+      });
+  </script>
+
+</body>
+
+</html>

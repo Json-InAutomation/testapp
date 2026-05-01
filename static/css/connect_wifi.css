@@ -1,0 +1,247 @@
+.container {
+    margin: 142px auto;
+    padding: 20px;
+}
+
+.card-container {
+    max-width: 94%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 2px;
+    border-left: 3px solid #7D3661;
+}
+
+.card-container h2 {
+    font-size: 1.4rem !important;
+    padding-bottom: 7px !important;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+.sysinfo-group {
+    margin-top: 14px;
+    padding-left: 4px;
+}
+
+.sysinfo-group p {
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+.wifi-refresher {
+    display: flex;
+    justify-content: space-between;
+}
+
+#refreshButton {
+    background-color: #7f8489;
+    border: none;
+    border-radius: 4px;
+    padding: 6.5px 9px;
+    font-size: 15px;
+    color: white;
+}
+
+input,
+select,
+.btn-connect {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-connect {
+    background-color: #3DB058;
+    color: white;
+    font-size: 1.4rem !important;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#success-message {
+    background-color: #f8f9fa;
+    border-left: 9px solid #198D19;
+    color: #1e7e34;
+    font-family: sans-serif;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: black;
+    box-shadow: 0px 0px 3px #ced4da;
+    transition: opacity 5s ease-in-out;
+    padding: 0.5rem;
+    margin: 0.5rem 0rem;
+    position: absolute;
+    top: 35%;
+    right: 5%;
+    z-index: 10;
+}
+
+#error-message {
+    background-color: #f8f9fa;
+    border-left: 9px solid #dc3545;
+    color: #dc3545;
+    font-family: sans-serif;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: black;
+    box-shadow: 0px 0px 3px #ced4da;
+    transition: opacity 5s ease-in-out;
+    padding: 0.5rem;
+    margin: 0.5rem 0rem;
+    position: absolute;
+    top: 35%;
+    right: 5%;
+    z-index: 10;
+}
+
+.show-message {
+    display: block;
+    overflow: hidden;
+}
+
+.connected-network {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    /* display: none; */
+}
+
+.connected-network p {
+    font-weight: bold;
+}
+
+.connected-network button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.connected-network button:hover {
+    background-color: #d32f2f;
+}
+
+#eyeIcon {
+    margin-top: 27px;
+    color: #641144;
+}
+
+.password-visible {
+    background-color: #F2F2F2;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+/* Keyboard Container */
+.keyboard-container {
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #eaeaea;
+    border-radius: 6px;
+    padding: 13px 26px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Keyboard Layout */
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 890px;
+    max-width: 100%;
+    height: 300px;
+}
+
+/* Key Rows */
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+/* Keys */
+.key {
+    flex: 1;
+    height: 55px;
+    font-size: 15px;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.key:hover {
+    background-color: #e0e0e0;
+}
+
+.key:active {
+    transform: scale(0.95);
+    background-color: #d1d1d1;
+}
+
+.key.space {
+    flex: 6;
+}
+
+.key.shift,
+.key.enter,
+.key.capslock,
+.key.backspace,
+.key.tab {
+    flex: 2;
+}
+
+.key.capslock.active,
+.key.shift.active {
+    background-color: #4caf50;
+    color: white;
+}
+
+.key.tab {
+    flex: 1.5;
+}
+
+/* .key.enter {
+    background-color: #e7f4e7;
+    border: 1px solid #4caf50;
+} */
+
+.key.backspace {
+    flex: 2;
+}
+
+/* Keyboard Responsive Design */
+@media (max-width: 768px) {
+    .keyboard {
+        width: 100%;
+    }
+
+    .key {
+        font-size: 14px;
+        height: 40px;
+        line-height: 40px;
+    }
+}

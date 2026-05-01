@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	{% if "cancel" in action %}
+	<meta http-equiv="refresh" content="1;url=/" />
+	{% endif %}
+
+	<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+	{% if workmode == 'dispense' %}
+	<link href="{{ url_for('static', filename='css/dispense.css') }}" rel="stylesheet">
+	{% endif %}
+	<link rel="manifest" href="{{ url_for('manifest') }}">
+	<link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon" type="image/x-icon" />
+	<!-- Apple Icons  -->
+	<link rel="apple-touch-icon" sizes="96x96" href="{{ url_for('static', filename='img/launcher-icon-2x.png') }}" />
+	<link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='img/launcher-icon-3x.png') }}" />
+	<link rel="apple-touch-icon" sizes="192x192" href="{{ url_for('static', filename='img/launcher-icon-4x.png') }}" />
+	<title>Doing some work... </title>
+	{% if workmode == 'dispense' %}
+	<style id="dynamic-bg-style">
+		.container:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-image: url('/static/{{ drinkDespenseImage }}');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			z-index: -1;
+			vertical-align: middle;
+			margin: auto;
+			border-style: none;
+			width: 100%;
+			overflow: hidden;
+		}
+	</style>
+	{% endif %}
+</head>
+
+<body>
+	{% if workmode != 'dispense' %}
+	<nav class="navbar sticky-top navbar-dark bg-transparent">
+		<a href="#" class="navbar-brand">
+			<img src="{{ url_for('static', filename='img/cxb-rbg.png') }}" alt="cxb-rbg.png" />
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="/"><i class="far fa-list-alt"></i>&nbsp; Drink Menu</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/inventory"><i class="fa fa-cog"></i>&nbsp; Inventory</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/cleaning"><i class="fa fa-tint"></i> &nbsp; Cleaning</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin"><i class="fa fa-wifi"></i>&nbsp; Admin</a>
+				</li>
+
+			</ul>
+		</div>
+	</nav><br>
+
+	{% endif %}
+	<!-- clean-container -->
+	<div
+		class="container {% if workmode != 'dispense' %}work-container{% endif %} {% if drink_name == 'special_drink' %}image-padding-special {% else %}image-padding{% endif %}">
+		{% if workmode == 'cancel' %}
+		<div class="card">
+			<div class="card-body text-center">
+				<H1>Cancelling...</H1><br>
+				Please wait.
+			</div>
+		</div>
+		{% elif workmode == 'clean' %}
+		<div class="progress-bar-row">
+			<div class="col text-center progress-bar-col">
+				<h3 class="clean-heading-progress"> Cleaning </h3>
+				<p class="pump-clean-card">
+					The process has begun to clean the <span class="clean_pump_group">{{clean_pump_group}}</span> pumps,
+					flushing out the
+					existing liquid from the tubes.
+					Please wait a moment as the cleaning completes.
+
+				</p>
+				<div class="">
+					<div class="text-center">
+						<div class="progress">
+							<div class="progress-bar progress-bar-striped progress-bar-animated" id="CleanStatus"
+								role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+								aria-valuemax="100">0%
+							</div>
+						</div>
+					</div>
+					<a href="/work/cancel" class="btn btn-danger btn-clean-cancel" role="button"
+						id="cancelbutton">Cancel</a>
+					<a href="/cleaning" class="btn btn-success" role="button" id="donebutton">Finished</a>
+				</div>
+			</div>
+
+			{% elif workmode == 'dispense' %}
+
+			<div class="progress-container">
+				<h3 id="statusMessage" style="color:white; text-shadow: 2px 2px 4px #000000;">Making {{ drink_name }}...
+				</h3>
+				<h5 id="active-pumps-display"
+					style="color:white; text-shadow: 2px 2px 4px #000000; min-height: 2em; margin-bottom: 20px;"></h5>
+				<div class="progress-bar-wrapper">
+					<div class="progress-bar" id="progress-bar"></div>
+					<span id="counter">0%</span>
+				</div>
+				<div class="dispense-button">
+					<a href="#" class="btn btn-danger" role="button" id="pauseResumeButton">Cancel</a>
+					<a href="/" class="btn btn-success" role="button" id="donebutton">Enjoy</a>
+				</div>
+			</div>
+			<!-- pop-up modal -->
+			<div id="dispenseModal" class="modal">
+				<div class="dispense-modal-content">
+					<div class="modal-responsive">
+						<p class="modal-text-title">Cancelling a drink ?</p>
+						<hr>
+						<p class="dispense-modal-text-info">
+							<span>
+								This <strong>{{ drink_name }}</strong> drink will cancel pouring.
+							</span>
+							<span class="modal-text-info-sub">
+								Charges will applicable even if the drink is canceled.
+							</span>
+						</p>
+					</div>
+
+					<div class="dispense-modal-footer modal-footer">
+						<button class="btn-cancel" id="abortButton">Abort</button>
+						<button type="submit" name="makedrink" class="btn-proceed" id="continueButton">
+							Continue
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% else %}
+		<div class="row">
+			<div class="col text-center">
+				<h3>Something weird happened.</h3>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col text-center">
+				<form name="input" action="/" method="POST">
+					<button type="submit" name="return_menu" value="success" class="btn btn-success">Return to
+						Menu</button>
+				</form>
+			</div>
+		</div>
+
+		{% endif %}
+	</div>
+	</div>
+	</div>
+
+	<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/slider.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+	{% if workmode == 'dispense' %}
+
+	<script>
+		var worker = null;
+		var isPaused = false;
+
+		var infiniteMode = {{ infinite_mode | default (0) }};
+		$('#donebutton').hide();
+
+		$(document).ready(function () {
+			function updateProgress() {
+				if (!isPaused) {
+					$.ajax({
+						url: '/workstatus',
+						type: 'GET',
+						success: function (data) {
+							console.log(data);
+							var loaded = data.percent_done;
+
+							if (data.waiting == 1) {
+								$('#statusMessage').html("Finished! Next drink starts in " + data.wait_time + "sec");
+								$('#counter').html("Wait");
+								$('#progress-bar').css('width', '100%');
+								$('.progress-bar-wrapper').css('display', 'none');
+								$('.dispense-button').css('display', 'none');
+							} else {
+								$('.progress-bar-wrapper').css('display', 'block');
+								$('.dispense-button').css('display', 'block');
+								$('#statusMessage').html("Making " + data.drink_name + "...");
+								$('#counter').html(loaded + '%');
+								$('#progress-bar').css('width', loaded + '%');
+							}
+
+							var activePumpsStr = (data.active_pumps || []).join(', ');
+							if (activePumpsStr) {
+								$('#active-pumps-display').text("Activated: " + activePumpsStr);
+							} else {
+								$('#active-pumps-display').text("");
+							}
+
+							if (data.drinkDespenseImage) {
+								$('#dynamic-bg-style').html('.container:before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url("/static/' + data.drinkDespenseImage + '"); background-repeat: no-repeat; background-size: cover; background-position: center; z-index: -1; vertical-align: middle; margin: auto; border-style: none; width: 100%; overflow: hidden; }');
+							}
+
+							if (loaded >= 100 && !infiniteMode && data.waiting == 0) {
+								stopWorking();
+							}
+						}
+					});
+				}
+			}
+
+			function stopWorking() {
+				clearInterval(worker);
+				$('#pauseResumeButton').hide();
+				$('#statusMessage').html('All done!');
+				$('#donebutton').show();
+				setTimeout(function () {
+					location.replace("/");
+				}, 10000);
+			}
+
+
+			$('#pauseResumeButton').on('click', function () {
+				isPaused = true;
+				clearInterval(worker);
+				$.get('/work/pause');
+				document.getElementById('dispenseModal').style.display = 'block';
+			});
+
+			$('#abortButton').on('click', function () {
+				window.location.href = '/work/cancel';
+			});
+
+			// Continue functionality
+			$('#continueButton').on('click', function () {
+				isPaused = false;
+				document.getElementById('dispenseModal').style.display = 'none';
+				$.get('/work/resume');
+				worker = setInterval(updateProgress, 1000);
+			});
+			worker = setInterval(updateProgress, 1000);
+		});
+
+	</script>
+	{% elif workmode == 'clean' %}
+
+	<script>
+		var worker = null;
+		$('#donebutton').hide();
+
+		$(document).ready(function () {
+			// Get data on page load
+			req = $.ajax({
+				url: '/workstatus',
+				type: 'GET'
+			});
+
+			req.done(function (data) {
+				// Update work status
+				// Returned Data: 
+				// 'data.percent_done'
+				document.getElementById("CleanStatus").style.width = data.percent_done + "%";
+				document.getElementById("CleanStatus").innerHTML = data.percent_done + "%";
+			});
+
+			// Get data every 1 second
+			function drawCleanStatus() {
+				req = $.ajax({
+					url: '/workstatus',
+					type: 'GET'
+				});
+
+				req.done(function (data) {
+					// Update work status
+					// Returned Data: 
+					// 'data.percent_done'
+					document.getElementById("CleanStatus").style.width = data.percent_done + "%";
+					document.getElementById("CleanStatus").innerHTML = data.percent_done + "%";
+					if (data.percent_done == 100) {
+						console.log('stopWorking');
+						stopWorking();
+					};
+				});
+			};
+
+			function stopWorking() {
+				console.log('Stopping Cleaning.');
+				clearInterval(worker);
+				$('#cancelbutton').hide();
+				$('#donebutton').show();
+				setTimeout(function () {
+					location.replace("/cleaning");
+				}, 2000); // Redirect to admin page 2 seconds after cleaning completed
+			}
+
+			worker = setInterval(drawCleanStatus, 1000);
+
+		});
+
+	</script>
+
+	{% else %}
+
+	{% endif %}
+
+</body>
+
+</html>

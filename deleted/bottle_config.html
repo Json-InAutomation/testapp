@@ -1,0 +1,302 @@
+{% extends 'base.html' %}
+
+{% block title %} Settings & Admin {% endblock %}
+{% block cssextend %}
+<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="container config-container">
+	<!-- Settings Success -->
+	{% if (action == "settings") and (errorcode == 0) %}
+	<div id="alertMessage" class="alert alert-success">
+		<b> Settings Updated Successfully.</b>
+	</div>
+	{% elif (action == "settings") and (errorcode == 1) %}
+	<div id="alertMessage" class="alert alert-danger">
+		{% for index in errormessage %}
+		<b>{{ index }}</b><br>
+		{% endfor %}
+	</div>
+	{% endif %}
+	<div class="message-container">
+		<div id="success-message" class="hidden message"></div>
+		<div id="error-message" class="hidden message"></div>
+	</div>
+
+
+	<!-- Inventory Card -->
+	<form name="input" id="settingsForm" action="/bottle-config/settings" method="POST">
+		<div class="card">
+			<div class="card-body">
+				<table class="table">
+					<thead>
+						<tr>
+							<th style="width: 14%;">Pump</th>
+							<th style="width: 20%;">Drink Ingredient</th>
+							<th style="width: 20%;">Quantity (in ml)</th>
+							<th style="width: 14%;">In Quantity (in ml)</th>
+							<th style="width: 10%; text-align:center">Action</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for pump_number, pin_number in settings['assignments'].items()|sort %}
+						{% if pump_number != "pump_16" %}
+						<tr data-pump="{{ pump_number }}" data-quantity="{{ settings['quantity'][pump_number] }}">
+							<td>{{ pump_number }}</td>
+							<td>
+								<div class="select-wrapper">
+									<div class="custom-dropdown" id="inv_{{ pump_number }}">
+										<div class="selected-option">
+											<span>
+												{% for ingredient_index, ingredient_name in
+												drink_db['ingredients'].items()|sort %}
+												{% if ingredient_index == settings['inventory'][pump_number] %}
+												{{ ingredient_name }}
+												{% endif %}
+												{% endfor %}
+											</span>
+											<i class="fas fa-chevron-down down-arrow"></i>
+											<i class="fas fa-chevron-up up-arrow" style="display: none;"></i>
+										</div>
+										<div class="options-container">
+											{% for ingredient_index, ingredient_name in
+											drink_db['ingredients'].items()|sort %}
+											<div class="option {% if ingredient_index == settings['inventory'][pump_number] %}selected{% endif %}"
+												data-value="{{ ingredient_index }}" {% if pump_number=='pump_16'
+												%}style="opacity: 0.5; pointer-events: none;" {% endif %}>
+												{{ ingredient_name }}
+											</div>
+											{% endfor %}
+										</div>
+										<input type="hidden" id="hidden_inv_{{ pump_number }}"
+											name="inv_{{ pump_number }}"
+											value="{{ settings['inventory'][pump_number] }}">
+									</div>
+								</div>
+
+							</td>
+
+							<td>
+								<div class="select-wrapper">
+									<div class="custom-dropdown" id="qty_{{ pump_number }}">
+										<div class="selected-option">
+											<span>
+												{% if settings['quantity'][pump_number] in [1000, 700, 500, 350, 200] %}
+												{{ settings['quantity'][pump_number] }}
+												{% else %}
+												1000
+												{% endif %}
+											</span>
+											<i class="fas fa-chevron-down down-arrow"></i>
+											<i class="fas fa-chevron-up up-arrow" style="display: none;"></i>
+										</div>
+
+										<div class="options-container" style="display: none;">
+											{% for quantity in [1000, 700, 500, 350, 200] %}
+											<div class="option {% if quantity == settings['quantity'][pump_number] %}selected{% endif %}"
+												data-value="{{ quantity }}">
+												{{ quantity }}
+											</div>
+											{% endfor %}
+										</div>
+
+										<input type="hidden" id="hidden_qty_{{ pump_number }}"
+											name="qty_{{ pump_number }}"
+											value="{{ settings['quantity'][pump_number] }}">
+									</div>
+								</div>
+							</td>
+
+							<td>
+								<input type="number" class="form-control form-control-quantity"
+									id="qty_{{ pump_number }}" name="qty_{{ pump_number }}" min="0" max="100" step="0.1"
+									value="{{ settings['in_quantity'][pump_number] }}"
+									oninput="updateProgress('{{ pump_number }}')" readonly>
+							</td>
+							<td style="text-align: center;">
+								<button class="btn-start-action btn-green" id="start_{{ pump_number }}" title="Start"
+									onclick="cleanPumpAction('{{ pump_number }}')">
+									<i class="fas fa-play"></i>
+								</button>
+								<button class="btn-stop-action btn-danger" id="stop_{{ pump_number }}" title="Stop"
+									style="display:none;" onclick="cancelPumpAction('{{ pump_number }}')">
+									<i class="fa fa-pause"></i>
+								</button>
+							</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" id="progress_{{ pump_number }}" role="progressbar"
+										style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%
+									</div>
+								</div>
+							</td>
+						</tr>
+						{% endif %}
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</form>
+	<div class="toggle-panel-container" >
+		<button id="toggle-open-panel" onclick="togglePanelVisibility()">
+
+			<svg fill="#ffffff" height="40px" width="40px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.006 512.006" xml:space="preserve"
+				transform="rotate(90)" stroke="#ffffff">
+				<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+				<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+				<g id="SVGRepo_iconCarrier">
+					<g>
+						<g>
+							<path
+								d="M388.419,475.59L168.834,256.005L388.418,36.421c8.341-8.341,8.341-21.824,0-30.165s-21.824-8.341-30.165,0 L123.586,240.923c-8.341,8.341-8.341,21.824,0,30.165l234.667,234.667c4.16,4.16,9.621,6.251,15.083,6.251 c5.461,0,10.923-2.091,15.083-6.251C396.76,497.414,396.76,483.931,388.419,475.59z">
+							</path>
+						</g>
+					</g>
+				</g>
+			</svg>
+		</button>
+
+		<!-- Panel Content -->
+		<div id="bottom-panel" class="bottom-panel">
+			<button class="close-panel" onclick="togglePanelVisibility()">
+				<svg height="40px" width="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+					transform="rotate(180)" stroke="#ffffff">
+					<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+					<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+					<g id="SVGRepo_iconCarrier">
+						<path d="M20 15L12 7L4 15" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"
+							stroke-linejoin="round"></path>
+					</g>
+				</svg>
+			</button>
+			<div class="panel-buttons">
+				<a href="/" class="panel-btn" rel="noopener noreferrer">Back</a>
+				<a href="/cleaning" class="panel-btn" rel="noopener noreferrer">Cleaning</a>
+				<button type="button" class="panel-btn" onclick="submitSettingsForm()">Save Settings</button>
+			</div>
+		</div>
+	</div>
+
+	{% endblock %}
+	{% block scripts %}
+	<script src="{{ url_for('static', filename='js/bottle_config.js') }}"></script>
+
+	<script id="quantity-data" type="application/json">
+		{{ settings['quantity'] | tojson | safe }}
+	</script>
+
+	<script id="percentage-data" type="application/json">
+        {{ settings['percentage']|tojson|safe }}
+    </script>
+
+	<script>
+
+		setTimeout(function () {
+			var alertmessage = document.getElementById('alertMessage')
+			alertmessage.classList.add('hidden');
+			alertmessage.classList.remove("show-message");
+		}, 5000);
+
+		document.addEventListener('DOMContentLoaded', function () {
+			const quantityData = JSON.parse(document.getElementById('quantity-data').textContent);
+
+			function updateProgress(pumpNumber, quantity) {
+				const progressBar = document.getElementById(`progress_${pumpNumber}`);
+
+				if (progressBar) {
+					const percentage = (quantity / 1000) * 100;
+
+					progressBar.style.width = `${percentage}%`;
+
+					if (quantity <= 150) {
+						progressBar.style.backgroundColor = 'red';
+					} else if (quantity <= 300) {
+						progressBar.style.backgroundColor = 'orange';
+					} else {
+						progressBar.style.backgroundColor = 'green';
+					}
+
+					// Update the percentage text inside the progress bar
+					progressBar.innerText = `${Math.round(percentage)}%`;
+					progressBar.setAttribute('aria-valuenow', Math.round(percentage));
+				}
+			}
+
+			// Loop through each pump's quantity and update the progress bar
+			Object.entries(quantityData).forEach(([pumpNumber, quantity]) => {
+				updateProgress(pumpNumber, quantity);
+			});
+		});
+
+
+	</script>
+	<script>
+		document.querySelectorAll('.custom-dropdown').forEach(select => {
+			const selectedOption = select.querySelector('.selected-option');
+			const optionsContainer = select.querySelector('.options-container');
+			const hiddenInput = select.querySelector('input[type="hidden"]');
+
+			const toggleArrows = (isOpen) => {
+				selectedOption.querySelector('.down-arrow').style.display = isOpen ? 'none' : 'block';
+				selectedOption.querySelector('.up-arrow').style.display = isOpen ? 'block' : 'none';
+			};
+
+			selectedOption.addEventListener('click', () => {
+				const isOpen = optionsContainer.style.display === 'block';
+				optionsContainer.style.display = isOpen ? 'none' : 'block';
+				toggleArrows(!isOpen);
+			});
+
+			select.querySelectorAll('.option').forEach(option => {
+				option.addEventListener('click', () => {
+					if (option.style.pointerEvents !== 'none') {
+						selectedOption.querySelector('span').textContent = option.textContent;
+						selectedOption.setAttribute('data-value', option.getAttribute('data-value'));
+						hiddenInput.value = option.getAttribute('data-value');
+						console.log(option.getAttribute('data-value'))
+						toggleArrows(false);
+						optionsContainer.style.display = 'none';
+					}
+				});
+			});
+
+			document.addEventListener('click', (event) => {
+				if (!select.contains(event.target)) {
+					optionsContainer.style.display = 'none';
+					toggleArrows(false);
+				}
+			});
+		});
+
+	</script>
+	<!-- panel button -->
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			function togglePanelVisibility() {
+				const panel = document.getElementById('bottom-panel');
+				if (panel) {
+					panel.classList.toggle('active');
+				} else {
+					console.error("Panel element not found!");
+				}
+			}
+			const toggleButton = document.getElementById('toggle-open-panel');
+			const closeButton = document.querySelector('.close-panel');
+
+			if (toggleButton) {
+				toggleButton.addEventListener('click', togglePanelVisibility);
+			}
+			if (closeButton) {
+				closeButton.addEventListener('click', togglePanelVisibility);
+			}
+		});
+
+		function submitSettingsForm() {
+			document.getElementById('settingsForm').submit();
+		}
+	</script>
+
+	{% endblock %}

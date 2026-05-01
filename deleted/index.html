@@ -1,0 +1,104 @@
+{% extends 'base.html' %} {% block cssextend %}
+<link
+  href="{{ url_for('static', filename='css/styles.css') }}"
+  rel="stylesheet"
+/>
+
+{% endblock %} {% block title %} Drink Menu {% endblock %} {% block content %}
+
+<div class="container">
+  <div class="card shadow">
+    <div class="card-body">
+      <form name="input" id="drinkForm" action="/work" method="POST">
+        <div
+          id="drinklist"
+          class="carousel slide"
+          data-ride="carousel"
+          data-interval="10000"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="coursel-img">
+                <img
+                  src="{{ url_for('static', filename='img/drinks/Robo.png') }}"
+                  alt="Welcome to Cafe"
+                />
+              </div>
+              <div class="carousel-caption-welcome">
+                <h1>
+                  <b>Bar<i class="text-success">Hostess</i></b>
+                </h1>
+                <h2>Welcomes you in the world of Cocktails</h2>
+                <h3 class="carousel-caption-h3">
+                  Use the arrows or swipe to select a drink option.
+                </h3>
+              </div>
+            </div>
+
+            {% for drink_name, drink_data in drinklist.items()|sort %}
+            <div class="carousel-item">
+              <div class="coursel-img">
+                <img
+                  src="{{ url_for('static', filename=drink_data['image']['drinkMainImage']) }}"
+                  alt="{{ drink_name }}"
+                />
+              </div>
+              <div class="carousel-caption">
+                <!--	<h1>{{ drink_data['name'] }}</h1>
+								<h5>{{ drink_data['description'] }}</h5>
+								<h3>Ingredients</h3>
+								<h4>{{ drink_data['ingredients'] }}</h4>  -->
+                <button
+                  type="button"
+                  class="btn btn-success btn-lg"
+                  onclick="openModal('{{ drink_name }}')"
+                >
+                  Make It
+                </button>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+          <a class="carousel-control-prev" href="#drinklist" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#drinklist" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </form>
+      <br />
+    </div>
+  </div>
+</div>
+
+<!-- pop up modal -->
+<div id="drinkModal" class="modal">
+  <div class="modal-content">
+    <div class="embed-responsive">
+      <video
+        controls
+        src="{{ url_for('static', filename='/img/drinks/Drink_Commercial.mp4') }}"
+        type="video/mp4"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></video>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button
+        type="submit"
+        name="makedrink"
+        value="{{ drink_name }}"
+        class="btn-proceed"
+        onclick="proceed()"
+      >
+        Proceed
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{
+    "insight": {
+        "totalDrink": 14,
+        "totalConsumed": 0,
+        "consumeDrink": {},
+        "mostConsumedDrink": ""
+    },
+    "ingridient": {
+        "pump_01": {
+            "actualQty": 200,
+            "stdQty": 200
+        },
+        "pump_02": {
+            "actualQty": 350,
+            "stdQty": 350
+        },
+        "pump_03": {
+            "actualQty": 1000,
+            "stdQty": 1000
+        },
+        "pump_04": {
+            "actualQty": 1000,
+            "stdQty": 1000
+        },
+        "pump_05": {
+            "actualQty": 1000,
+            "stdQty": 1000
+        },
+        "pump_06": {
+            "actualQty": 700,
+            "stdQty": 700
+        },
+        "pump_07": {
+            "actualQty": 350,
+            "stdQty": 350
+        },
+        "pump_08": {
+            "actualQty": 500,
+            "stdQty": 500
+        },
+        "pump_09": {
+            "actualQty": 1000,
+            "stdQty": 1000
+        },
+        "pump_10": {
+            "actualQty": 1000,
+            "stdQty": 1000
+        },
+        "pump_11": {
+            "actualQty": 1000,
+            "stdQty": 1000
+        },
+        "pump_12": {
+            "actualQty": 500,
+            "stdQty": 500
+        },
+        "pump_13": {
+            "actualQty": 1000,
+            "stdQty": 1000
+        },
+        "pump_14": {
+            "actualQty": 1000,
+            "stdQty": 1000
+        },
+        "pump_15": {
+            "actualQty": 500,
+            "stdQty": 500
+        },
+        "pump_16": {
+            "actualQty": 100,
+            "stdQty": 100
+        }
+    }
+}
