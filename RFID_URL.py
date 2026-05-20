@@ -22,7 +22,6 @@ def RFID():
 
     last_tag_id = None
 
-    # --- NEW BROWSER LOGIC ---
     # Explicitly tell the OS to use the primary display screen
     my_env = os.environ.copy()
     my_env["DISPLAY"] = ":0" 
@@ -60,3 +59,7 @@ def RFID():
         print("\nProgram stopped by user.")
     finally:
         GPIO.cleanup()
+
+
+if __name__=="__main__":
+    RFID()

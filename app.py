@@ -18,6 +18,9 @@ from version import __system_name__,__system_id__
 from flask_socketio import SocketIO
 import threading
 import shutil
+event_logger = CustomLogger("EVENT","event.out.log","event.err.log")
+webapp_logger = CustomLogger("WebAPP","webapp.error.log","webapp.out.log")
+deployment_logger = CustomLogger("DEPLOYMENT","deployment.out.log","deployment.err.log")
 
 UPLOAD_DIR = 'static/img/drinks'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif','json',"mp4"}
@@ -468,6 +471,7 @@ def inventory(action=None):
 
         if pump_number_clean in non_alcoholic_pumps:
             metadata['machine']['non_alcoholic_last_refilled'][pump_number_clean] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            event_logger.info(f'The pump {pump_number_clean} non alcohlic pump refilled on {datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
             WriteMetadata(metadata)
         
         if (action == "cancel"):
@@ -521,6 +525,7 @@ def cleaning(action=None):
         drink_name = 'clean'
         metadata = ReadMetadata() 
         metadata['machine']['last_cleaned_at'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        event_logger.info(f'The machine clean was on {datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
         WriteMetadata(metadata)
       
         
@@ -560,7 +565,7 @@ def irSensorDetection():
         errorcode = 0
         errormessage = [] 
         print(f"Sensor Result: {settings['ir_sensor']['isDetected']}")
-        
+        event_logger.info(f'Pour : IR Sensor detected a glass')
         return jsonify({"sensor_results":settings['ir_sensor']['isDetected'],"detection":settings['ir_sensor']['detection']})
     
     except Exception as e:
@@ -573,6 +578,7 @@ def upload():
     if request.method == "POST":
 
         if 'file' not in request.files:
+                deployment_logger.critical("file does not contains")
                 return jsonify({'status':'error','message':f"file does not contains"})
         
         files = request.files.getlist('file')
@@ -587,9 +593,10 @@ def upload():
 
         shutil.copytree(UPLOAD_DIR, new_backup_dir,dirs_exist_ok=True)
         print(f"Backup created at: {new_backup_dir}")
-
+        deployment_logger.info(f"Existing folders/files are backup created at: {new_backup_dir}")
+        
+        deployment_logger.info(f"files are uploading")
         for file in files:
-            #Get File Size
             file.seek(0, os.SEEK_END)
             size = file.tell()
             file.seek(0)
@@ -600,6 +607,7 @@ def upload():
                     "reason": "Empty filename",
                     'status':'failed'
                 })
+                deployment_logger.critical(f"Failed to upload unknown file")
                 continue
 
             if not allowed_file(file.filename):
@@ -608,6 +616,7 @@ def upload():
                     "reason": "Invalid file type",
                     'status':'failed'
                 })
+                deployment_logger.critical(f"Failed to upload - Invalid file type")
                 continue
 
             filename = secure_filename(file.filename)
@@ -627,6 +636,7 @@ def upload():
                 filename = secure_filename(file.filename)
                 if filename == 'settings.json' or filename == 'drink_db.json':
                     file.save(os.path.join(os.getcwd(),filename))
+                    deployment_logger.info(f'Uploaded {filename}')
                 else:
                     file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
                     uploaded.append({
@@ -634,15 +644,25 @@ def upload():
                         'size':round(size / 1024, 2),
                         'status':'uploaded'
                     })
+                    deployment_logger.info(f'Uploaded {filename}')
 
             except Exception as e:
                 failed.append({
                     "file": file.filename,
                     "reason": str(e)
             })
-                
-        status = 'uploaded' if not failed else('partially uploaded' if uploaded else "failed")
-                    
+                deployment_logger.info(f'Failed to upload {file.filename} {str(e)}')
+        
+        if failed:
+            if uploaded:
+                deployment_logger.warning("partially uploaded")
+                status = "partially uploaded"
+            else:
+                status = "failed"
+                deployment_logger.warning("Failed to upload")
+        else:
+            status = "uploaded"
+    
         return jsonify({
         "status": status,
         "uploaded": uploaded,

@@ -6,7 +6,7 @@ import json
 from version import __system_name__,__system_id__,__version__
 import subprocess
 import sys
-
+import logging
 # def ReadStatus():
 #     if not os.path.exists("status.json"): 
 #         print("Error: status.json file not found. Creating a new one.")
@@ -378,4 +378,60 @@ class LEDStripControl:
                 print(f"LED STRP: {self.filename} Stopped")
         else:
             print(f"LED Strip for {self.filename} is already stopped.")
-     
+
+
+class CustomLogger:
+    def __init__(self,name,out_file,err_file):
+        self.name=name
+        self.out_file = out_file
+        self.err_file=err_file
+        
+        os.makedirs("logs", exist_ok=True)
+        
+        self.logger = logging.getLogger(name)
+        self.logger.setLevel(logging.DEBUG)
+        
+        if not self.logger.handlers:
+
+            formatter = logging.Formatter(
+                "[%(asctime)s] "
+                "[%(levelname)s] "
+                "[%(name)s] "
+                "%(message)s"
+            )
+
+            dir = os.getcwd() + "/logs/"
+            out_handler = logging.FileHandler(
+                os.path.join(dir, self.out_file),
+              mode='a', encoding="utf-8"
+            )
+
+            out_handler.setLevel(logging.INFO)
+            out_handler.setFormatter(formatter)
+
+            err_handler = logging.FileHandler(
+                os.path.join(dir, self.err_file),
+              mode='a', encoding="utf-8"
+            )
+
+            err_handler.setLevel(logging.ERROR)
+            err_handler.setFormatter(formatter)
+
+
+            self.logger.addHandler(out_handler)
+            self.logger.addHandler(err_handler)
+
+    def info(self, message):
+        self.logger.info(message)
+
+    def debug(self, message):
+        self.logger.debug(message)
+
+    def warning(self, message):
+        self.logger.warning(message)
+
+    def error(self, message):
+        self.logger.error(message, exc_info=True)
+
+    def critical(self, message):
+        self.logger.critical(message, exc_info=True)

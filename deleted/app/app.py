@@ -2699,3 +2699,56 @@ def do_work(action=None):
             return render_template('work.html', drink_name=drink_name, action="default", workmode='dispense',drinkDespenseImage=drinkDespenseImage, infinite_mode=1)
 
     return redirect('/')
+       
+def CleanPump(pump_selected):
+    print(f"The selected pump is {pump_selected} for cleaning")
+    control_logger.info(f"The selected pump is {pump_selected} for cleaning")
+    settings = ReadSettings()
+    status = ReadStatus()
+    status['status']['active'] = 1
+    WriteStatus(status)
+
+    # Initialize Platform Object
+    platform = PumpControl(settings)
+
+    if pump_selected == "all":
+        total_runtime = 0
+        progress = 0
+
+        for pump_number, pin_number in settings['assignments'].items():
+            if pin_number != 0:
+                total_runtime += 20
+
+        for pump_number, pin_number in settings['assignments'].items():
+
+            if (pin_number != 0) and (status['control']['stop'] == 0):
+                platform.ActivatePump(pump_number)
+                for index in range(20):
+                    status = ReadStatus()
+                    if (status['control']['stop'] == 0):
+                        progress += 1
+                        status['status']['progress'] = int(100 * (progress / total_runtime))
+                        WriteStatus(status)
+                        time.sleep(1) # Run for X seconds
+                    else:
+                        break
+                platform.DeActivatePump(pump_number)
+    else:
+        for pump_number, pin_number in settings['assignments'].items():
+            if (pump_selected == pump_number):
+                platform.ActivatePump(pump_number)
+                for index in range(21):
+                    status = ReadStatus()
+                    if (status['control']['stop'] == 0):
+                        status['status']['progress'] = index*5
+                        WriteStatus(status)
+                        time.sleep(1) # Run for X seconds
+                    else:
+                        break
+                platform.DeActivatePump(pump_number)
+
+
+    status['status']['active'] = 0
+    status['control']['stop'] = 0
+    status['control']['clean'] = ""
+    WriteStatus(status)

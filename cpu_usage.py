@@ -5,7 +5,7 @@ import psutil
 
 FAN_PIN = 18  
 MAX_TEMP = 75 
-MAX_CPU = 75 
+MAX_CPU = 70 
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(FAN_PIN, GPIO.OUT)
@@ -33,3 +33,6 @@ def main():
             time.sleep(5)
     except KeyboardInterrupt:
         GPIO.cleanup()
+        
+if __name__=="__main__":
+    main()

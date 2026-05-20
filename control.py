@@ -24,13 +24,18 @@ import json
 import datetime
 from common import *
 import threading
-
+import logging
 if(prototype_mode == True):
     # Prototype Modules for Test Host (i.e. PC based testing)
     from platform_prototype import PumpControl # Library for reading the ADC device
 else:
     # Actual Modules for RasPi
     from platform_raspi import PumpControl # Library for reading the ADC device
+control_logger = CustomLogger(
+                    name="CONTROL",
+                    out_file="control.out.log",
+                    err_file="control.err.log"
+                )
 
 stop_threads = False
 pause_threads = False
@@ -38,6 +43,7 @@ pourStripControl = LEDStripControl('OneStripNeopixel.py')
 
 def Pour(pump_number, waitTime, platform):
     print(f' * Thread: {pump_number} Started for {waitTime} seconds.')
+    control_logger.info(f' * Thread: {pump_number} Started for {waitTime} seconds.')
     platform.ActivatePump(pump_number)
     
     for x in range(waitTime): 
@@ -47,26 +53,31 @@ def Pour(pump_number, waitTime, platform):
         
         if (status['control']['stop']==1):
             print(f' * Thread: {pump_number} cancelling. Threads is {stop_threads}') 
+            control_logger.info(' * Thread: {pump_number} cancelling. Threads is {stop_threads}')
             platform.DeActivatePump(pump_number)
             return
 
         if status['control']['pause'] == 1:
             print(f' * Thread: {pump_number} paused.')
+            control_logger.info(f' * Thread: {pump_number} paused.')
             platform.DeActivatePump(pump_number)
             while status['control']['pause'] == 1:
                 time.sleep(1)  
                 status = ReadStatus() 
             print(f' * Thread: {pump_number} resuming.')
+            control_logger.info(f' * Thread: {pump_number} resuming.')
             platform.ActivatePump(pump_number) 
         
         # platform.ActivatePump(pump_number)  
         if (stop_threads == True): 
             print(f' * Thread: {pump_number} cancelling. Threads is {stop_threads}') 
+            control_logger.info(f' * Thread: {pump_number} cancelling. Threads is {stop_threads}') 
             platform.DeActivatePump(pump_number)
             return
         
     platform.DeActivatePump(pump_number)
     print(f' * Thread: {pump_number} finished.')
+    control_logger.info(f' * Thread: {pump_number} finished.')
 
 # def DelayedPour(pump_number, runtime, platform, delay):
 #     time.sleep(delay)
@@ -91,12 +102,14 @@ def PourDrink(drink_name):
             settings['percentage'] = {}
 
         print(f"Starting to prepare {drink_name}")
+        control_logger.info(f"Starting to prepare {drink_name}")
 
         # Calculate total runtime
         for drink_ingredient, pump_runtime in drink_db['drinks'][drink_name]['ingredients'].items():
             total_runtime = max(total_runtime, int(pump_runtime * (settings['flowrate'] / 100)))
 
         print(f"Total Runtime: {total_runtime}") 
+        control_logger.info(f"Total Runtime: {total_runtime}") 
         # Create and start threads to dispense each ingredient
         pumpThreads = []
         updated_quantities = {}
@@ -203,15 +216,35 @@ def PourDrink(drink_name):
         WriteSettings(settings)
 
         print("Finished. Cleaning up status file.")
+        control_logger.info("Finished. Cleaning up status file.")
         status['status']['active'] = 0
         status['control']['start'] = 0
         status['control']['stop'] = 0
         WriteStatus(status) 
     else:
         print("Error, no drinks match that name.")
-        
+ 
+
+def run_pump(platform,pump_number,total_runtime,progress):
+    for index in range(20):
+        status = ReadStatus()
+        if status['control']['stop'] != 0:
+            platform.DeActivatePump(pump_number)
+            return progress, True
+        progress += 1
+        if total_runtime > 0:
+            status['status']['progress'] = int(100 * (progress / total_runtime))
+        else:
+            status['status']['progress'] = 0
+        WriteStatus(status)
+        time.sleep(1) # Run for X seconds
+       
+    platform.DeActivatePump(pump_number)
+    return progress,False
+
 def CleanPump(pump_selected):
     print(f"The selected pump is {pump_selected} for cleaning")
+    control_logger.info(f"The selected pump is {pump_selected} for cleaning")
     settings = ReadSettings()
     status = ReadStatus()
     status['status']['active'] = 1
@@ -219,49 +252,44 @@ def CleanPump(pump_selected):
 
     # Initialize Platform Object
     platform = PumpControl(settings)
+    total_runtime = 0
+    progress = 0
+    
+    def is_valid_pump(pump_number, pin_number):
+        if pump_number == 'pump_16' or pin_number == 5 or pin_number == 0:
+            return False
 
-    if pump_selected == "all":
-        total_runtime = 0
-        progress = 0
+        pump_index = int(pump_number.split('_')[1])
 
-        for pump_number, pin_number in settings['assignments'].items():
-            if pin_number != 0:
-                total_runtime += 20
+        if pump_selected == "all":
+            return True
+        elif pump_selected == "non_alcoholic":
+            return 1 <= pump_index <= 7
+        else:
+            return 8 <= pump_index <= 15
+        
+    for pump_number, pin_number in settings['assignments'].items():
+        if is_valid_pump(pump_number, pin_number):
+            total_runtime += 20
 
-        for pump_number, pin_number in settings['assignments'].items():
+    for pump_number, pin_number in settings['assignments'].items():
+        status = ReadStatus()
+        if status['control']['stop'] != 0:
+            break
 
-            if (pin_number != 0) and (status['control']['stop'] == 0):
-                platform.ActivatePump(pump_number)
-                for index in range(20):
-                    status = ReadStatus()
-                    if (status['control']['stop'] == 0):
-                        progress += 1
-                        status['status']['progress'] = int(100 * (progress / total_runtime))
-                        WriteStatus(status)
-                        time.sleep(1) # Run for X seconds
-                    else:
-                        break
-                platform.DeActivatePump(pump_number)
-    else:
-        for pump_number, pin_number in settings['assignments'].items():
-            if (pump_selected == pump_number):
-                platform.ActivatePump(pump_number)
-                for index in range(21):
-                    status = ReadStatus()
-                    if (status['control']['stop'] == 0):
-                        status['status']['progress'] = index*5
-                        WriteStatus(status)
-                        time.sleep(1) # Run for X seconds
-                    else:
-                        break
-                platform.DeActivatePump(pump_number)
-
-
+        if is_valid_pump(pump_number, pin_number):
+            platform.ActivatePump(pump_number)
+            progress, stopped = run_pump(platform, pump_number, total_runtime, progress)
+            if stopped:
+                print(f"The pump is {pump_selected} for cleaning stopped")
+                control_logger.info(f"The pump is {pump_selected} for cleaning stopped")
+                break
+            
+    status = ReadStatus()
     status['status']['active'] = 0
     status['control']['stop'] = 0
     status['control']['clean'] = ""
     WriteStatus(status)
-
 
 # *****************************************
 # Main Program Loop
@@ -299,8 +327,10 @@ def main():
                         status['control']['start'] = 1
                         idx = status['control'].get('infinite_index', 0)
                         print("The index is : ", idx)
+                        control_logger.info(f'The index is : {idx}')
                         drink_list = status['control'].get('infinite_drinks', [])
                         print("The drink list is : ", drink_list)
+                        control_logger.info(f'The drink list is :{drink_list}')
                         if len(drink_list) > 0:
                             print("The drink name is : ", drink_list[idx],)
                             status['control']['drink_name'] = drink_list[idx]
@@ -310,6 +340,7 @@ def main():
                 elif status['control']['start'] == 1:
                     pourStripControl.startStrip()
                     event = 'Drink requested: ' + status['control']['drink_name']
+                    control_logger.info(event)
                     print(f"event: {event}")
                     WriteLog(event)
                     PourDrink(status['control']['drink_name'])
@@ -326,6 +357,7 @@ def main():
                         
                 elif status['control']['clean'] != "":
                     event = 'Clean requested for pump: ' + str(status['control']['clean'])
+                    control_logger.info(event)
                     WriteLog(event)
                     CleanPump(status['control']['clean'])
 

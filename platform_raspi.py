@@ -15,6 +15,10 @@
 import RPi.GPIO as GPIO
 import time
 from common import *
+control_logger = CustomLogger(
+                    name="CONTROL",
+                    out_file="control.out.log",
+                    err_file="control.err.log")
 
 class PumpControl:
 	def __init__(self, settings):
@@ -26,14 +30,17 @@ class PumpControl:
 			GPIO.setup(pin_number, GPIO.OUT, initial=1)
 			self.pump_pins[pump_number] = pin_number
 			print(f"Pin number {pin_number} initialized as output for {pump_number}.  Set to 1. ")
+			control_logger.info(f"Pin number {pin_number} initialized as output for {pump_number}.Set to 1. ")
 
 	def ActivatePump(self, pump_number):
 		GPIO.output(self.pump_pins[pump_number], 0) # Turn on Relay
 		print(f"{pump_number} Pump Activated. Dispensing on pin: {self.pump_pins[pump_number]}")
+		control_logger.info(f"{pump_number} Pump Activated. Dispensing on pin: {self.pump_pins[pump_number]}")
 
 	def DeActivatePump(self, pump_number):
 		GPIO.output(self.pump_pins[pump_number], 1) # Turn off Relay
 		print(f"{pump_number} Pump De-Activated. Stopped Dispensing on pin: {self.pump_pins[pump_number]}")
+		control_logger.info(f"{pump_number} Pump De-Activated. Stopped Dispensing on pin: {self.pump_pins[pump_number]}")
 
 	def GetOutputStatus(self):
 		self.current = {}
