@@ -1,7 +1,7 @@
 {
     "insight": {
-        "totalDrink": 370,
-        "totalConsumed": 393,
+        "totalDrink": 381,
+        "totalConsumed": 404,
         "consumeDrink": {
             "BayBreeze": {
                 "consumeCount": 15,
@@ -214,8 +214,8 @@
                 ]
             },
             "Test-2": {
-                "consumeCount": 116,
-                "lastConsumedOn": "2026-06-30 22:33:22",
+                "consumeCount": 120,
+                "lastConsumedOn": "2026-06-30 22:39:55",
                 "consumptionHistory": [
                     {
                         "count": 1,
@@ -556,6 +556,22 @@
                     {
                         "count": 1,
                         "timestamp": "2026-04-30"
+                    },
+                    {
+                        "count": 1,
+                        "timestamp": "2026-06-30"
+                    },
+                    {
+                        "count": 1,
+                        "timestamp": "2026-06-30"
+                    },
+                    {
+                        "count": 1,
+                        "timestamp": "2026-06-30"
+                    },
+                    {
+                        "count": 1,
+                        "timestamp": "2026-06-30"
                     },
                     {
                         "count": 1,
@@ -684,8 +700,8 @@
                 ]
             },
             "Test-3": {
-                "consumeCount": 107,
-                "lastConsumedOn": "2026-06-30 22:33:55",
+                "consumeCount": 111,
+                "lastConsumedOn": "2026-06-30 22:40:28",
                 "consumptionHistory": [
                     {
                         "count": 1,
@@ -994,6 +1010,22 @@
                     {
                         "count": 1,
                         "timestamp": "2026-04-30"
+                    },
+                    {
+                        "count": 1,
+                        "timestamp": "2026-06-30"
+                    },
+                    {
+                        "count": 1,
+                        "timestamp": "2026-06-30"
+                    },
+                    {
+                        "count": 1,
+                        "timestamp": "2026-06-30"
+                    },
+                    {
+                        "count": 1,
+                        "timestamp": "2026-06-30"
                     },
                     {
                         "count": 1,
@@ -1118,8 +1150,8 @@
                 ]
             },
             "Test-1": {
-                "consumeCount": 122,
-                "lastConsumedOn": "2026-06-30 22:34:28",
+                "consumeCount": 125,
+                "lastConsumedOn": "2026-06-30 22:39:23",
                 "consumptionHistory": [
                     {
                         "count": 1,
@@ -1472,6 +1504,18 @@
                     {
                         "count": 1,
                         "timestamp": "2026-04-30"
+                    },
+                    {
+                        "count": 1,
+                        "timestamp": "2026-06-30"
+                    },
+                    {
+                        "count": 1,
+                        "timestamp": "2026-06-30"
+                    },
+                    {
+                        "count": 1,
+                        "timestamp": "2026-06-30"
                     },
                     {
                         "count": 1,

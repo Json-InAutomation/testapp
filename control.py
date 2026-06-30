@@ -189,10 +189,13 @@ def PourDrink(drink_name):
             WriteStatus(status)
             
             if (percent_progress >= 50 and not mixer_started):
+                print("Starting mixer...")
                 pump_number = "pump_16"
                 pump_16_runtime = max(1, int(total_runtime * 0.5)) 
                 pump_t = threading.Thread(target=Pour, args=(pump_number, pump_16_runtime, platform))
+                print("Creating mixer thread")
                 pump_t.start()  
+                print("Starting mixer thread")
                 pumpThreads.append(pump_t)  
                 mixer_started = True
                 mixer_start_count = current_count

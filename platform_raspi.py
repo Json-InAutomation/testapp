@@ -36,7 +36,6 @@ class PumpControl:
 		GPIO.output(self.pump_pins[pump_number], 0) # Turn on Relay
 		print(f"{pump_number} Pump Activated. Dispensing on pin: {self.pump_pins[pump_number]}")
 		control_logger.info(f"{pump_number} Pump Activated. Dispensing on pin: {self.pump_pins[pump_number]}")
-
 	def DeActivatePump(self, pump_number):
 		GPIO.output(self.pump_pins[pump_number], 1) # Turn off Relay
 		print(f"{pump_number} Pump De-Activated. Stopped Dispensing on pin: {self.pump_pins[pump_number]}")
