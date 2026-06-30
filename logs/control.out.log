@@ -1,0 +1,575 @@
+[2026-06-30 21:40:33,568] [INFO] [CONTROL] The index is : 0
+[2026-06-30 21:40:33,569] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:40:34,576] [INFO] [CONTROL] Drink requested: Test-1
+[2026-06-30 21:40:34,604] [INFO] [CONTROL] Starting to prepare Test-1
+[2026-06-30 21:40:34,605] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:40:34,608] [INFO] [CONTROL]  * Thread: pump_01 Started for 7 seconds.
+[2026-06-30 21:40:34,609] [INFO] [CONTROL]  * Thread: pump_02 Started for 8 seconds.
+[2026-06-30 21:40:34,609] [INFO] [CONTROL]  * Thread: pump_03 Started for 10 seconds.
+[2026-06-30 21:40:34,610] [INFO] [CONTROL]  * Thread: pump_04 Started for 12 seconds.
+[2026-06-30 21:40:34,610] [INFO] [CONTROL]  * Thread: pump_05 Started for 14 seconds.
+[2026-06-30 21:40:41,618] [INFO] [CONTROL]  * Thread: pump_01 finished.
+[2026-06-30 21:40:41,699] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:40:42,618] [INFO] [CONTROL]  * Thread: pump_02 finished.
+[2026-06-30 21:40:44,621] [INFO] [CONTROL]  * Thread: pump_03 finished.
+[2026-06-30 21:40:46,624] [INFO] [CONTROL]  * Thread: pump_04 finished.
+[2026-06-30 21:40:48,627] [INFO] [CONTROL]  * Thread: pump_05 finished.
+[2026-06-30 21:40:48,708] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:40:49,892] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:41:05,995] [INFO] [CONTROL] The index is : 1
+[2026-06-30 21:41:05,995] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:41:07,002] [INFO] [CONTROL] Drink requested: Test-2
+[2026-06-30 21:41:07,029] [INFO] [CONTROL] Starting to prepare Test-2
+[2026-06-30 21:41:07,029] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:41:07,030] [INFO] [CONTROL]  * Thread: pump_06 Started for 7 seconds.
+[2026-06-30 21:41:07,030] [INFO] [CONTROL]  * Thread: pump_07 Started for 8 seconds.
+[2026-06-30 21:41:07,031] [INFO] [CONTROL]  * Thread: pump_08 Started for 10 seconds.
+[2026-06-30 21:41:07,032] [INFO] [CONTROL]  * Thread: pump_09 Started for 12 seconds.
+[2026-06-30 21:41:07,039] [INFO] [CONTROL]  * Thread: pump_10 Started for 14 seconds.
+[2026-06-30 21:41:14,038] [INFO] [CONTROL]  * Thread: pump_06 finished.
+[2026-06-30 21:41:14,121] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:41:15,039] [INFO] [CONTROL]  * Thread: pump_07 finished.
+[2026-06-30 21:41:17,042] [INFO] [CONTROL]  * Thread: pump_08 finished.
+[2026-06-30 21:41:19,050] [INFO] [CONTROL]  * Thread: pump_09 finished.
+[2026-06-30 21:41:21,054] [INFO] [CONTROL]  * Thread: pump_10 finished.
+[2026-06-30 21:41:21,129] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:41:22,288] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:41:38,420] [INFO] [CONTROL] The index is : 2
+[2026-06-30 21:41:38,421] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:41:39,427] [INFO] [CONTROL] Drink requested: Test-3
+[2026-06-30 21:41:39,461] [INFO] [CONTROL] Starting to prepare Test-3
+[2026-06-30 21:41:39,461] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:41:39,464] [INFO] [CONTROL]  * Thread: pump_11 Started for 7 seconds.
+[2026-06-30 21:41:39,465] [INFO] [CONTROL]  * Thread: pump_12 Started for 8 seconds.
+[2026-06-30 21:41:39,466] [INFO] [CONTROL]  * Thread: pump_13 Started for 10 seconds.
+[2026-06-30 21:41:39,466] [INFO] [CONTROL]  * Thread: pump_14 Started for 12 seconds.
+[2026-06-30 21:41:39,467] [INFO] [CONTROL]  * Thread: pump_15 Started for 14 seconds.
+[2026-06-30 21:41:46,491] [INFO] [CONTROL]  * Thread: pump_11 finished.
+[2026-06-30 21:41:46,554] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:41:47,492] [INFO] [CONTROL]  * Thread: pump_12 finished.
+[2026-06-30 21:41:49,494] [INFO] [CONTROL]  * Thread: pump_13 finished.
+[2026-06-30 21:41:51,496] [INFO] [CONTROL]  * Thread: pump_14 finished.
+[2026-06-30 21:41:53,497] [INFO] [CONTROL]  * Thread: pump_15 finished.
+[2026-06-30 21:41:53,561] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:41:54,732] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:42:10,818] [INFO] [CONTROL] The index is : 0
+[2026-06-30 21:42:10,818] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:42:11,826] [INFO] [CONTROL] Drink requested: Test-1
+[2026-06-30 21:42:11,858] [INFO] [CONTROL] Starting to prepare Test-1
+[2026-06-30 21:42:11,859] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:42:11,861] [INFO] [CONTROL]  * Thread: pump_01 Started for 7 seconds.
+[2026-06-30 21:42:11,862] [INFO] [CONTROL]  * Thread: pump_02 Started for 8 seconds.
+[2026-06-30 21:42:11,862] [INFO] [CONTROL]  * Thread: pump_03 Started for 10 seconds.
+[2026-06-30 21:42:11,864] [INFO] [CONTROL]  * Thread: pump_04 Started for 12 seconds.
+[2026-06-30 21:42:11,864] [INFO] [CONTROL]  * Thread: pump_05 Started for 14 seconds.
+[2026-06-30 21:42:18,868] [INFO] [CONTROL]  * Thread: pump_01 finished.
+[2026-06-30 21:42:18,942] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:42:19,871] [INFO] [CONTROL]  * Thread: pump_02 finished.
+[2026-06-30 21:42:21,873] [INFO] [CONTROL]  * Thread: pump_03 finished.
+[2026-06-30 21:42:23,879] [INFO] [CONTROL]  * Thread: pump_04 finished.
+[2026-06-30 21:42:25,878] [INFO] [CONTROL]  * Thread: pump_05 finished.
+[2026-06-30 21:42:25,951] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:42:27,107] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:42:43,187] [INFO] [CONTROL] The index is : 1
+[2026-06-30 21:42:43,188] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:42:44,195] [INFO] [CONTROL] Drink requested: Test-2
+[2026-06-30 21:42:44,224] [INFO] [CONTROL] Starting to prepare Test-2
+[2026-06-30 21:42:44,224] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:42:44,226] [INFO] [CONTROL]  * Thread: pump_06 Started for 7 seconds.
+[2026-06-30 21:42:44,227] [INFO] [CONTROL]  * Thread: pump_07 Started for 8 seconds.
+[2026-06-30 21:42:44,229] [INFO] [CONTROL]  * Thread: pump_08 Started for 10 seconds.
+[2026-06-30 21:42:44,230] [INFO] [CONTROL]  * Thread: pump_09 Started for 12 seconds.
+[2026-06-30 21:42:44,231] [INFO] [CONTROL]  * Thread: pump_10 Started for 14 seconds.
+[2026-06-30 21:42:51,236] [INFO] [CONTROL]  * Thread: pump_06 finished.
+[2026-06-30 21:42:51,307] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:42:52,235] [INFO] [CONTROL]  * Thread: pump_07 finished.
+[2026-06-30 21:42:54,240] [INFO] [CONTROL]  * Thread: pump_08 finished.
+[2026-06-30 21:42:56,241] [INFO] [CONTROL]  * Thread: pump_09 finished.
+[2026-06-30 21:42:58,245] [INFO] [CONTROL]  * Thread: pump_10 finished.
+[2026-06-30 21:42:58,315] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:42:59,453] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:43:15,532] [INFO] [CONTROL] The index is : 2
+[2026-06-30 21:43:15,532] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:43:16,537] [INFO] [CONTROL] Drink requested: Test-3
+[2026-06-30 21:43:16,587] [INFO] [CONTROL] Starting to prepare Test-3
+[2026-06-30 21:43:16,587] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:43:16,589] [INFO] [CONTROL]  * Thread: pump_11 Started for 7 seconds.
+[2026-06-30 21:43:16,589] [INFO] [CONTROL]  * Thread: pump_12 Started for 8 seconds.
+[2026-06-30 21:43:16,590] [INFO] [CONTROL]  * Thread: pump_13 Started for 10 seconds.
+[2026-06-30 21:43:16,591] [INFO] [CONTROL]  * Thread: pump_14 Started for 12 seconds.
+[2026-06-30 21:43:16,592] [INFO] [CONTROL]  * Thread: pump_15 Started for 14 seconds.
+[2026-06-30 21:43:23,599] [INFO] [CONTROL]  * Thread: pump_11 finished.
+[2026-06-30 21:43:23,674] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:43:24,599] [INFO] [CONTROL]  * Thread: pump_12 finished.
+[2026-06-30 21:43:26,602] [INFO] [CONTROL]  * Thread: pump_13 finished.
+[2026-06-30 21:43:28,606] [INFO] [CONTROL]  * Thread: pump_14 finished.
+[2026-06-30 21:43:30,608] [INFO] [CONTROL]  * Thread: pump_15 finished.
+[2026-06-30 21:43:30,683] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:43:31,870] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:43:47,946] [INFO] [CONTROL] The index is : 0
+[2026-06-30 21:43:47,947] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:43:48,952] [INFO] [CONTROL] Drink requested: Test-1
+[2026-06-30 21:43:49,008] [INFO] [CONTROL] Starting to prepare Test-1
+[2026-06-30 21:43:49,008] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:43:49,010] [INFO] [CONTROL]  * Thread: pump_01 Started for 7 seconds.
+[2026-06-30 21:43:49,010] [INFO] [CONTROL]  * Thread: pump_02 Started for 8 seconds.
+[2026-06-30 21:43:49,010] [INFO] [CONTROL]  * Thread: pump_03 Started for 10 seconds.
+[2026-06-30 21:43:49,011] [INFO] [CONTROL]  * Thread: pump_04 Started for 12 seconds.
+[2026-06-30 21:43:49,013] [INFO] [CONTROL]  * Thread: pump_05 Started for 14 seconds.
+[2026-06-30 21:43:56,018] [INFO] [CONTROL]  * Thread: pump_01 finished.
+[2026-06-30 21:43:56,083] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:43:57,019] [INFO] [CONTROL]  * Thread: pump_02 finished.
+[2026-06-30 21:43:59,024] [INFO] [CONTROL]  * Thread: pump_03 finished.
+[2026-06-30 21:44:01,025] [INFO] [CONTROL]  * Thread: pump_04 finished.
+[2026-06-30 21:44:03,028] [INFO] [CONTROL]  * Thread: pump_05 finished.
+[2026-06-30 21:44:03,091] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:44:04,242] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:44:20,316] [INFO] [CONTROL] The index is : 1
+[2026-06-30 21:44:20,317] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:44:21,322] [INFO] [CONTROL] Drink requested: Test-2
+[2026-06-30 21:44:21,349] [INFO] [CONTROL] Starting to prepare Test-2
+[2026-06-30 21:44:21,349] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:44:21,350] [INFO] [CONTROL]  * Thread: pump_06 Started for 7 seconds.
+[2026-06-30 21:44:21,351] [INFO] [CONTROL]  * Thread: pump_07 Started for 8 seconds.
+[2026-06-30 21:44:21,351] [INFO] [CONTROL]  * Thread: pump_08 Started for 10 seconds.
+[2026-06-30 21:44:21,352] [INFO] [CONTROL]  * Thread: pump_09 Started for 12 seconds.
+[2026-06-30 21:44:21,352] [INFO] [CONTROL]  * Thread: pump_10 Started for 14 seconds.
+[2026-06-30 21:44:28,368] [INFO] [CONTROL]  * Thread: pump_06 finished.
+[2026-06-30 21:44:28,429] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:44:29,371] [INFO] [CONTROL]  * Thread: pump_07 finished.
+[2026-06-30 21:44:31,378] [INFO] [CONTROL]  * Thread: pump_08 finished.
+[2026-06-30 21:44:33,381] [INFO] [CONTROL]  * Thread: pump_09 finished.
+[2026-06-30 21:44:35,383] [INFO] [CONTROL]  * Thread: pump_10 finished.
+[2026-06-30 21:44:35,440] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:44:36,590] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:44:52,669] [INFO] [CONTROL] The index is : 2
+[2026-06-30 21:44:52,669] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:44:53,675] [INFO] [CONTROL] Drink requested: Test-3
+[2026-06-30 21:44:53,724] [INFO] [CONTROL] Starting to prepare Test-3
+[2026-06-30 21:44:53,724] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:44:53,726] [INFO] [CONTROL]  * Thread: pump_11 Started for 7 seconds.
+[2026-06-30 21:44:53,726] [INFO] [CONTROL]  * Thread: pump_12 Started for 8 seconds.
+[2026-06-30 21:44:53,726] [INFO] [CONTROL]  * Thread: pump_13 Started for 10 seconds.
+[2026-06-30 21:44:53,727] [INFO] [CONTROL]  * Thread: pump_14 Started for 12 seconds.
+[2026-06-30 21:44:53,727] [INFO] [CONTROL]  * Thread: pump_15 Started for 14 seconds.
+[2026-06-30 21:45:00,734] [INFO] [CONTROL]  * Thread: pump_11 finished.
+[2026-06-30 21:45:00,803] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:45:01,737] [INFO] [CONTROL]  * Thread: pump_12 finished.
+[2026-06-30 21:45:03,737] [INFO] [CONTROL]  * Thread: pump_13 finished.
+[2026-06-30 21:45:05,859] [INFO] [CONTROL]  * Thread: pump_14 finished.
+[2026-06-30 21:45:07,864] [INFO] [CONTROL]  * Thread: pump_15 finished.
+[2026-06-30 21:45:07,911] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:45:09,065] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:45:25,162] [INFO] [CONTROL] The index is : 0
+[2026-06-30 21:45:25,163] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:45:26,168] [INFO] [CONTROL] Drink requested: Test-1
+[2026-06-30 21:45:26,194] [INFO] [CONTROL] Starting to prepare Test-1
+[2026-06-30 21:45:26,194] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:45:26,196] [INFO] [CONTROL]  * Thread: pump_01 Started for 7 seconds.
+[2026-06-30 21:45:26,196] [INFO] [CONTROL]  * Thread: pump_02 Started for 8 seconds.
+[2026-06-30 21:45:26,196] [INFO] [CONTROL]  * Thread: pump_03 Started for 10 seconds.
+[2026-06-30 21:45:26,197] [INFO] [CONTROL]  * Thread: pump_04 Started for 12 seconds.
+[2026-06-30 21:45:26,197] [INFO] [CONTROL]  * Thread: pump_05 Started for 14 seconds.
+[2026-06-30 21:45:33,205] [INFO] [CONTROL]  * Thread: pump_01 finished.
+[2026-06-30 21:45:33,267] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:45:34,311] [INFO] [CONTROL]  * Thread: pump_02 finished.
+[2026-06-30 21:45:36,242] [INFO] [CONTROL]  * Thread: pump_03 finished.
+[2026-06-30 21:45:38,255] [INFO] [CONTROL]  * Thread: pump_04 finished.
+[2026-06-30 21:45:40,257] [INFO] [CONTROL]  * Thread: pump_05 finished.
+[2026-06-30 21:45:40,312] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:45:41,476] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:45:57,565] [INFO] [CONTROL] The index is : 1
+[2026-06-30 21:45:57,565] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:45:58,571] [INFO] [CONTROL] Drink requested: Test-2
+[2026-06-30 21:45:58,595] [INFO] [CONTROL] Starting to prepare Test-2
+[2026-06-30 21:45:58,595] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:45:58,596] [INFO] [CONTROL]  * Thread: pump_06 Started for 7 seconds.
+[2026-06-30 21:45:58,597] [INFO] [CONTROL]  * Thread: pump_07 Started for 8 seconds.
+[2026-06-30 21:45:58,597] [INFO] [CONTROL]  * Thread: pump_08 Started for 10 seconds.
+[2026-06-30 21:45:58,598] [INFO] [CONTROL]  * Thread: pump_09 Started for 12 seconds.
+[2026-06-30 21:45:58,598] [INFO] [CONTROL]  * Thread: pump_10 Started for 14 seconds.
+[2026-06-30 21:46:05,608] [INFO] [CONTROL]  * Thread: pump_06 finished.
+[2026-06-30 21:46:05,666] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:46:06,606] [INFO] [CONTROL]  * Thread: pump_07 finished.
+[2026-06-30 21:46:08,621] [INFO] [CONTROL]  * Thread: pump_08 finished.
+[2026-06-30 21:46:10,616] [INFO] [CONTROL]  * Thread: pump_09 finished.
+[2026-06-30 21:46:12,631] [INFO] [CONTROL]  * Thread: pump_10 finished.
+[2026-06-30 21:46:12,691] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:46:13,867] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:46:30,065] [INFO] [CONTROL] The index is : 2
+[2026-06-30 21:46:30,066] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:46:31,122] [INFO] [CONTROL] Drink requested: Test-3
+[2026-06-30 21:46:31,165] [INFO] [CONTROL] Starting to prepare Test-3
+[2026-06-30 21:46:31,165] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:46:31,167] [INFO] [CONTROL]  * Thread: pump_11 Started for 7 seconds.
+[2026-06-30 21:46:31,167] [INFO] [CONTROL]  * Thread: pump_12 Started for 8 seconds.
+[2026-06-30 21:46:31,168] [INFO] [CONTROL]  * Thread: pump_13 Started for 10 seconds.
+[2026-06-30 21:46:31,168] [INFO] [CONTROL]  * Thread: pump_14 Started for 12 seconds.
+[2026-06-30 21:46:31,169] [INFO] [CONTROL]  * Thread: pump_15 Started for 14 seconds.
+[2026-06-30 21:46:38,177] [INFO] [CONTROL]  * Thread: pump_11 finished.
+[2026-06-30 21:46:38,255] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:46:39,179] [INFO] [CONTROL]  * Thread: pump_12 finished.
+[2026-06-30 21:46:41,181] [INFO] [CONTROL]  * Thread: pump_13 finished.
+[2026-06-30 21:46:43,187] [INFO] [CONTROL]  * Thread: pump_14 finished.
+[2026-06-30 21:46:45,187] [INFO] [CONTROL]  * Thread: pump_15 finished.
+[2026-06-30 21:46:45,265] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:46:46,422] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:47:33,925] [INFO] [CONTROL] The index is : 0
+[2026-06-30 21:47:33,926] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:47:34,932] [INFO] [CONTROL] Drink requested: Test-1
+[2026-06-30 21:47:34,957] [INFO] [CONTROL] Starting to prepare Test-1
+[2026-06-30 21:47:34,957] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:47:34,959] [INFO] [CONTROL]  * Thread: pump_01 Started for 7 seconds.
+[2026-06-30 21:47:34,959] [INFO] [CONTROL]  * Thread: pump_02 Started for 8 seconds.
+[2026-06-30 21:47:34,960] [INFO] [CONTROL]  * Thread: pump_03 Started for 10 seconds.
+[2026-06-30 21:47:34,960] [INFO] [CONTROL]  * Thread: pump_04 Started for 12 seconds.
+[2026-06-30 21:47:34,960] [INFO] [CONTROL]  * Thread: pump_05 Started for 14 seconds.
+[2026-06-30 21:47:41,972] [INFO] [CONTROL]  * Thread: pump_01 finished.
+[2026-06-30 21:47:42,084] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:47:42,975] [INFO] [CONTROL]  * Thread: pump_02 finished.
+[2026-06-30 21:47:44,980] [INFO] [CONTROL]  * Thread: pump_03 finished.
+[2026-06-30 21:47:46,985] [INFO] [CONTROL]  * Thread: pump_04 finished.
+[2026-06-30 21:47:48,991] [INFO] [CONTROL]  * Thread: pump_05 finished.
+[2026-06-30 21:47:49,093] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:47:50,288] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:48:06,371] [INFO] [CONTROL] The index is : 1
+[2026-06-30 21:48:06,371] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:48:07,377] [INFO] [CONTROL] Drink requested: Test-2
+[2026-06-30 21:48:07,404] [INFO] [CONTROL] Starting to prepare Test-2
+[2026-06-30 21:48:07,404] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:48:07,405] [INFO] [CONTROL]  * Thread: pump_06 Started for 7 seconds.
+[2026-06-30 21:48:07,406] [INFO] [CONTROL]  * Thread: pump_07 Started for 8 seconds.
+[2026-06-30 21:48:07,406] [INFO] [CONTROL]  * Thread: pump_08 Started for 10 seconds.
+[2026-06-30 21:48:07,407] [INFO] [CONTROL]  * Thread: pump_09 Started for 12 seconds.
+[2026-06-30 21:48:07,407] [INFO] [CONTROL]  * Thread: pump_10 Started for 14 seconds.
+[2026-06-30 21:48:14,465] [INFO] [CONTROL]  * Thread: pump_06 finished.
+[2026-06-30 21:48:14,558] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:48:15,466] [INFO] [CONTROL]  * Thread: pump_07 finished.
+[2026-06-30 21:48:17,466] [INFO] [CONTROL]  * Thread: pump_08 finished.
+[2026-06-30 21:48:19,470] [INFO] [CONTROL]  * Thread: pump_09 finished.
+[2026-06-30 21:48:21,471] [INFO] [CONTROL]  * Thread: pump_10 finished.
+[2026-06-30 21:48:21,566] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:48:22,691] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:48:38,781] [INFO] [CONTROL] The index is : 2
+[2026-06-30 21:48:38,781] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:48:39,786] [INFO] [CONTROL] Drink requested: Test-3
+[2026-06-30 21:48:39,815] [INFO] [CONTROL] Starting to prepare Test-3
+[2026-06-30 21:48:39,815] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:48:39,816] [INFO] [CONTROL]  * Thread: pump_11 Started for 7 seconds.
+[2026-06-30 21:48:39,816] [INFO] [CONTROL]  * Thread: pump_12 Started for 8 seconds.
+[2026-06-30 21:48:39,817] [INFO] [CONTROL]  * Thread: pump_13 Started for 10 seconds.
+[2026-06-30 21:48:39,817] [INFO] [CONTROL]  * Thread: pump_14 Started for 12 seconds.
+[2026-06-30 21:48:39,818] [INFO] [CONTROL]  * Thread: pump_15 Started for 14 seconds.
+[2026-06-30 21:48:46,838] [INFO] [CONTROL]  * Thread: pump_11 finished.
+[2026-06-30 21:48:46,888] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:48:47,841] [INFO] [CONTROL]  * Thread: pump_12 finished.
+[2026-06-30 21:48:49,844] [INFO] [CONTROL]  * Thread: pump_13 finished.
+[2026-06-30 21:48:51,853] [INFO] [CONTROL]  * Thread: pump_14 finished.
+[2026-06-30 21:48:53,870] [INFO] [CONTROL]  * Thread: pump_15 finished.
+[2026-06-30 21:48:53,962] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:48:55,467] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:49:11,896] [INFO] [CONTROL] The index is : 0
+[2026-06-30 21:49:11,897] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:49:12,904] [INFO] [CONTROL] Drink requested: Test-1
+[2026-06-30 21:49:12,941] [INFO] [CONTROL] Starting to prepare Test-1
+[2026-06-30 21:49:12,941] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:49:12,942] [INFO] [CONTROL]  * Thread: pump_01 Started for 7 seconds.
+[2026-06-30 21:49:12,943] [INFO] [CONTROL]  * Thread: pump_02 Started for 8 seconds.
+[2026-06-30 21:49:12,943] [INFO] [CONTROL]  * Thread: pump_03 Started for 10 seconds.
+[2026-06-30 21:49:12,945] [INFO] [CONTROL]  * Thread: pump_04 Started for 12 seconds.
+[2026-06-30 21:49:12,947] [INFO] [CONTROL]  * Thread: pump_05 Started for 14 seconds.
+[2026-06-30 21:49:19,950] [INFO] [CONTROL]  * Thread: pump_01 finished.
+[2026-06-30 21:49:20,028] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:49:20,960] [INFO] [CONTROL]  * Thread: pump_02 finished.
+[2026-06-30 21:49:22,966] [INFO] [CONTROL]  * Thread: pump_03 finished.
+[2026-06-30 21:49:24,972] [INFO] [CONTROL]  * Thread: pump_04 finished.
+[2026-06-30 21:49:26,978] [INFO] [CONTROL]  * Thread: pump_05 finished.
+[2026-06-30 21:49:27,038] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:49:28,181] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:49:44,262] [INFO] [CONTROL] The index is : 1
+[2026-06-30 21:49:44,262] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:49:45,269] [INFO] [CONTROL] Drink requested: Test-2
+[2026-06-30 21:49:45,296] [INFO] [CONTROL] Starting to prepare Test-2
+[2026-06-30 21:49:45,297] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:49:45,298] [INFO] [CONTROL]  * Thread: pump_06 Started for 7 seconds.
+[2026-06-30 21:49:45,298] [INFO] [CONTROL]  * Thread: pump_07 Started for 8 seconds.
+[2026-06-30 21:49:45,299] [INFO] [CONTROL]  * Thread: pump_08 Started for 10 seconds.
+[2026-06-30 21:49:45,299] [INFO] [CONTROL]  * Thread: pump_09 Started for 12 seconds.
+[2026-06-30 21:49:45,299] [INFO] [CONTROL]  * Thread: pump_10 Started for 14 seconds.
+[2026-06-30 21:49:52,316] [INFO] [CONTROL]  * Thread: pump_06 finished.
+[2026-06-30 21:49:52,478] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:49:53,318] [INFO] [CONTROL]  * Thread: pump_07 finished.
+[2026-06-30 21:49:55,321] [INFO] [CONTROL]  * Thread: pump_08 finished.
+[2026-06-30 21:49:57,446] [INFO] [CONTROL]  * Thread: pump_09 finished.
+[2026-06-30 21:49:59,442] [INFO] [CONTROL]  * Thread: pump_10 finished.
+[2026-06-30 21:49:59,493] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:50:00,913] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:50:17,044] [INFO] [CONTROL] The index is : 2
+[2026-06-30 21:50:17,045] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:50:18,057] [INFO] [CONTROL] Drink requested: Test-3
+[2026-06-30 21:50:18,079] [INFO] [CONTROL] Starting to prepare Test-3
+[2026-06-30 21:50:18,079] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:50:18,081] [INFO] [CONTROL]  * Thread: pump_11 Started for 7 seconds.
+[2026-06-30 21:50:18,081] [INFO] [CONTROL]  * Thread: pump_12 Started for 8 seconds.
+[2026-06-30 21:50:18,081] [INFO] [CONTROL]  * Thread: pump_13 Started for 10 seconds.
+[2026-06-30 21:50:18,082] [INFO] [CONTROL]  * Thread: pump_14 Started for 12 seconds.
+[2026-06-30 21:50:18,082] [INFO] [CONTROL]  * Thread: pump_15 Started for 14 seconds.
+[2026-06-30 21:50:25,110] [INFO] [CONTROL]  * Thread: pump_11 finished.
+[2026-06-30 21:50:25,149] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:50:26,113] [INFO] [CONTROL]  * Thread: pump_12 finished.
+[2026-06-30 21:50:28,122] [INFO] [CONTROL]  * Thread: pump_13 finished.
+[2026-06-30 21:50:30,128] [INFO] [CONTROL]  * Thread: pump_14 finished.
+[2026-06-30 21:50:32,133] [INFO] [CONTROL]  * Thread: pump_15 finished.
+[2026-06-30 21:50:32,158] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:50:33,494] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:50:49,614] [INFO] [CONTROL] The index is : 0
+[2026-06-30 21:50:49,614] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:50:50,622] [INFO] [CONTROL] Drink requested: Test-1
+[2026-06-30 21:50:50,663] [INFO] [CONTROL] Starting to prepare Test-1
+[2026-06-30 21:50:50,664] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:50:50,672] [INFO] [CONTROL]  * Thread: pump_01 Started for 7 seconds.
+[2026-06-30 21:50:50,672] [INFO] [CONTROL]  * Thread: pump_02 Started for 8 seconds.
+[2026-06-30 21:50:50,673] [INFO] [CONTROL]  * Thread: pump_03 Started for 10 seconds.
+[2026-06-30 21:50:50,676] [INFO] [CONTROL]  * Thread: pump_04 Started for 12 seconds.
+[2026-06-30 21:50:50,676] [INFO] [CONTROL]  * Thread: pump_05 Started for 14 seconds.
+[2026-06-30 21:50:57,694] [INFO] [CONTROL]  * Thread: pump_01 finished.
+[2026-06-30 21:50:57,757] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:50:58,696] [INFO] [CONTROL]  * Thread: pump_02 finished.
+[2026-06-30 21:51:00,703] [INFO] [CONTROL]  * Thread: pump_03 finished.
+[2026-06-30 21:51:02,710] [INFO] [CONTROL]  * Thread: pump_04 finished.
+[2026-06-30 21:51:04,715] [INFO] [CONTROL]  * Thread: pump_05 finished.
+[2026-06-30 21:51:04,774] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:51:05,961] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:51:49,387] [INFO] [CONTROL] The index is : 0
+[2026-06-30 21:51:49,387] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:51:50,393] [INFO] [CONTROL] Drink requested: Test-1
+[2026-06-30 21:51:50,417] [INFO] [CONTROL] Starting to prepare Test-1
+[2026-06-30 21:51:50,417] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:51:50,418] [INFO] [CONTROL]  * Thread: pump_01 Started for 7 seconds.
+[2026-06-30 21:51:50,419] [INFO] [CONTROL]  * Thread: pump_02 Started for 8 seconds.
+[2026-06-30 21:51:50,419] [INFO] [CONTROL]  * Thread: pump_03 Started for 10 seconds.
+[2026-06-30 21:51:50,420] [INFO] [CONTROL]  * Thread: pump_04 Started for 12 seconds.
+[2026-06-30 21:51:50,420] [INFO] [CONTROL]  * Thread: pump_05 Started for 14 seconds.
+[2026-06-30 21:51:57,646] [INFO] [CONTROL]  * Thread: pump_01 finished.
+[2026-06-30 21:51:58,294] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:51:58,629] [INFO] [CONTROL]  * Thread: pump_02 finished.
+[2026-06-30 21:52:00,655] [INFO] [CONTROL]  * Thread: pump_03 finished.
+[2026-06-30 21:52:02,660] [INFO] [CONTROL]  * Thread: pump_04 finished.
+[2026-06-30 21:52:04,667] [INFO] [CONTROL]  * Thread: pump_05 finished.
+[2026-06-30 21:52:05,306] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:52:06,664] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:52:22,896] [INFO] [CONTROL] The index is : 1
+[2026-06-30 21:52:22,897] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:52:23,903] [INFO] [CONTROL] Drink requested: Test-2
+[2026-06-30 21:52:23,936] [INFO] [CONTROL] Starting to prepare Test-2
+[2026-06-30 21:52:23,937] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:52:23,938] [INFO] [CONTROL]  * Thread: pump_06 Started for 7 seconds.
+[2026-06-30 21:52:23,938] [INFO] [CONTROL]  * Thread: pump_07 Started for 8 seconds.
+[2026-06-30 21:52:23,939] [INFO] [CONTROL]  * Thread: pump_08 Started for 10 seconds.
+[2026-06-30 21:52:23,939] [INFO] [CONTROL]  * Thread: pump_09 Started for 12 seconds.
+[2026-06-30 21:52:23,939] [INFO] [CONTROL]  * Thread: pump_10 Started for 14 seconds.
+[2026-06-30 21:52:30,956] [INFO] [CONTROL]  * Thread: pump_06 finished.
+[2026-06-30 21:52:31,074] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:52:31,960] [INFO] [CONTROL]  * Thread: pump_07 finished.
+[2026-06-30 21:52:33,965] [INFO] [CONTROL]  * Thread: pump_08 finished.
+[2026-06-30 21:52:35,970] [INFO] [CONTROL]  * Thread: pump_09 finished.
+[2026-06-30 21:52:37,976] [INFO] [CONTROL]  * Thread: pump_10 finished.
+[2026-06-30 21:52:38,080] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:52:39,218] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:52:55,363] [INFO] [CONTROL] The index is : 2
+[2026-06-30 21:52:55,364] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:52:56,369] [INFO] [CONTROL] Drink requested: Test-3
+[2026-06-30 21:52:56,397] [INFO] [CONTROL] Starting to prepare Test-3
+[2026-06-30 21:52:56,398] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:52:56,399] [INFO] [CONTROL]  * Thread: pump_11 Started for 7 seconds.
+[2026-06-30 21:52:56,399] [INFO] [CONTROL]  * Thread: pump_12 Started for 8 seconds.
+[2026-06-30 21:52:56,400] [INFO] [CONTROL]  * Thread: pump_13 Started for 10 seconds.
+[2026-06-30 21:52:56,400] [INFO] [CONTROL]  * Thread: pump_14 Started for 12 seconds.
+[2026-06-30 21:52:56,400] [INFO] [CONTROL]  * Thread: pump_15 Started for 14 seconds.
+[2026-06-30 21:53:03,446] [INFO] [CONTROL]  * Thread: pump_11 finished.
+[2026-06-30 21:53:03,550] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:53:04,446] [INFO] [CONTROL]  * Thread: pump_12 finished.
+[2026-06-30 21:53:06,449] [INFO] [CONTROL]  * Thread: pump_13 finished.
+[2026-06-30 21:53:08,451] [INFO] [CONTROL]  * Thread: pump_14 finished.
+[2026-06-30 21:53:10,449] [INFO] [CONTROL]  * Thread: pump_15 finished.
+[2026-06-30 21:53:10,598] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:53:11,891] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:53:27,981] [INFO] [CONTROL] The index is : 0
+[2026-06-30 21:53:27,981] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:53:28,988] [INFO] [CONTROL] Drink requested: Test-1
+[2026-06-30 21:53:29,022] [INFO] [CONTROL] Starting to prepare Test-1
+[2026-06-30 21:53:29,022] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:53:29,023] [INFO] [CONTROL]  * Thread: pump_01 Started for 7 seconds.
+[2026-06-30 21:53:29,024] [INFO] [CONTROL]  * Thread: pump_02 Started for 8 seconds.
+[2026-06-30 21:53:29,024] [INFO] [CONTROL]  * Thread: pump_03 Started for 10 seconds.
+[2026-06-30 21:53:29,025] [INFO] [CONTROL]  * Thread: pump_04 Started for 12 seconds.
+[2026-06-30 21:53:29,025] [INFO] [CONTROL]  * Thread: pump_05 Started for 14 seconds.
+[2026-06-30 21:53:36,045] [INFO] [CONTROL]  * Thread: pump_01 finished.
+[2026-06-30 21:53:36,135] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:53:37,048] [INFO] [CONTROL]  * Thread: pump_02 finished.
+[2026-06-30 21:53:39,054] [INFO] [CONTROL]  * Thread: pump_03 finished.
+[2026-06-30 21:53:41,108] [INFO] [CONTROL]  * Thread: pump_04 finished.
+[2026-06-30 21:53:43,171] [INFO] [CONTROL]  * Thread: pump_05 finished.
+[2026-06-30 21:53:43,219] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:53:44,418] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:54:00,505] [INFO] [CONTROL] The index is : 0
+[2026-06-30 21:54:00,506] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:54:01,511] [INFO] [CONTROL] Drink requested: Test-1
+[2026-06-30 21:54:01,537] [INFO] [CONTROL] Starting to prepare Test-1
+[2026-06-30 21:54:01,537] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:54:01,538] [INFO] [CONTROL]  * Thread: pump_01 Started for 7 seconds.
+[2026-06-30 21:54:01,538] [INFO] [CONTROL]  * Thread: pump_02 Started for 8 seconds.
+[2026-06-30 21:54:01,539] [INFO] [CONTROL]  * Thread: pump_03 Started for 10 seconds.
+[2026-06-30 21:54:01,539] [INFO] [CONTROL]  * Thread: pump_04 Started for 12 seconds.
+[2026-06-30 21:54:01,540] [INFO] [CONTROL]  * Thread: pump_05 Started for 14 seconds.
+[2026-06-30 21:54:08,550] [INFO] [CONTROL]  * Thread: pump_01 finished.
+[2026-06-30 21:54:08,621] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:54:09,552] [INFO] [CONTROL]  * Thread: pump_02 finished.
+[2026-06-30 21:54:11,554] [INFO] [CONTROL]  * Thread: pump_03 finished.
+[2026-06-30 21:54:13,555] [INFO] [CONTROL]  * Thread: pump_04 finished.
+[2026-06-30 21:54:15,557] [INFO] [CONTROL]  * Thread: pump_05 finished.
+[2026-06-30 21:54:15,629] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:54:16,783] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:54:32,860] [INFO] [CONTROL] The index is : 1
+[2026-06-30 21:54:32,860] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:54:33,865] [INFO] [CONTROL] Drink requested: Test-2
+[2026-06-30 21:54:33,895] [INFO] [CONTROL] Starting to prepare Test-2
+[2026-06-30 21:54:33,895] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:54:33,896] [INFO] [CONTROL]  * Thread: pump_06 Started for 7 seconds.
+[2026-06-30 21:54:33,897] [INFO] [CONTROL]  * Thread: pump_07 Started for 8 seconds.
+[2026-06-30 21:54:33,901] [INFO] [CONTROL]  * Thread: pump_08 Started for 10 seconds.
+[2026-06-30 21:54:33,902] [INFO] [CONTROL]  * Thread: pump_09 Started for 12 seconds.
+[2026-06-30 21:54:33,903] [INFO] [CONTROL]  * Thread: pump_10 Started for 14 seconds.
+[2026-06-30 21:54:40,974] [INFO] [CONTROL]  * Thread: pump_06 finished.
+[2026-06-30 21:54:41,106] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:54:41,978] [INFO] [CONTROL]  * Thread: pump_07 finished.
+[2026-06-30 21:54:43,980] [INFO] [CONTROL]  * Thread: pump_08 finished.
+[2026-06-30 21:54:45,982] [INFO] [CONTROL]  * Thread: pump_09 finished.
+[2026-06-30 21:54:47,983] [INFO] [CONTROL]  * Thread: pump_10 finished.
+[2026-06-30 21:54:48,113] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:54:49,284] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:55:05,375] [INFO] [CONTROL] The index is : 2
+[2026-06-30 21:55:05,376] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:55:06,388] [INFO] [CONTROL] Drink requested: Test-3
+[2026-06-30 21:55:06,457] [INFO] [CONTROL] Starting to prepare Test-3
+[2026-06-30 21:55:06,460] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:55:06,463] [INFO] [CONTROL]  * Thread: pump_11 Started for 7 seconds.
+[2026-06-30 21:55:06,463] [INFO] [CONTROL]  * Thread: pump_12 Started for 8 seconds.
+[2026-06-30 21:55:06,465] [INFO] [CONTROL]  * Thread: pump_13 Started for 10 seconds.
+[2026-06-30 21:55:06,466] [INFO] [CONTROL]  * Thread: pump_14 Started for 12 seconds.
+[2026-06-30 21:55:06,468] [INFO] [CONTROL]  * Thread: pump_15 Started for 14 seconds.
+[2026-06-30 21:55:13,600] [INFO] [CONTROL]  * Thread: pump_11 finished.
+[2026-06-30 21:55:13,765] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:55:14,603] [INFO] [CONTROL]  * Thread: pump_12 finished.
+[2026-06-30 21:55:16,695] [INFO] [CONTROL]  * Thread: pump_13 finished.
+[2026-06-30 21:55:18,671] [INFO] [CONTROL]  * Thread: pump_14 finished.
+[2026-06-30 21:55:20,694] [INFO] [CONTROL]  * Thread: pump_15 finished.
+[2026-06-30 21:55:20,972] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:55:22,124] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:55:38,234] [INFO] [CONTROL] The index is : 0
+[2026-06-30 21:55:38,234] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:55:39,241] [INFO] [CONTROL] Drink requested: Test-1
+[2026-06-30 21:55:39,269] [INFO] [CONTROL] Starting to prepare Test-1
+[2026-06-30 21:55:39,269] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:55:39,271] [INFO] [CONTROL]  * Thread: pump_01 Started for 7 seconds.
+[2026-06-30 21:55:39,271] [INFO] [CONTROL]  * Thread: pump_02 Started for 8 seconds.
+[2026-06-30 21:55:39,272] [INFO] [CONTROL]  * Thread: pump_03 Started for 10 seconds.
+[2026-06-30 21:55:39,272] [INFO] [CONTROL]  * Thread: pump_04 Started for 12 seconds.
+[2026-06-30 21:55:39,273] [INFO] [CONTROL]  * Thread: pump_05 Started for 14 seconds.
+[2026-06-30 21:55:46,281] [INFO] [CONTROL]  * Thread: pump_01 finished.
+[2026-06-30 21:55:46,352] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:55:47,282] [INFO] [CONTROL]  * Thread: pump_02 finished.
+[2026-06-30 21:55:49,285] [INFO] [CONTROL]  * Thread: pump_03 finished.
+[2026-06-30 21:55:51,426] [INFO] [CONTROL]  * Thread: pump_04 finished.
+[2026-06-30 21:55:53,353] [INFO] [CONTROL]  * Thread: pump_05 finished.
+[2026-06-30 21:55:53,398] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:55:54,688] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:56:10,810] [INFO] [CONTROL] The index is : 1
+[2026-06-30 21:56:10,811] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:56:11,818] [INFO] [CONTROL] Drink requested: Test-2
+[2026-06-30 21:56:11,844] [INFO] [CONTROL] Starting to prepare Test-2
+[2026-06-30 21:56:11,844] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:56:11,845] [INFO] [CONTROL]  * Thread: pump_06 Started for 7 seconds.
+[2026-06-30 21:56:11,845] [INFO] [CONTROL]  * Thread: pump_07 Started for 8 seconds.
+[2026-06-30 21:56:11,846] [INFO] [CONTROL]  * Thread: pump_08 Started for 10 seconds.
+[2026-06-30 21:56:11,847] [INFO] [CONTROL]  * Thread: pump_09 Started for 12 seconds.
+[2026-06-30 21:56:11,847] [INFO] [CONTROL]  * Thread: pump_10 Started for 14 seconds.
+[2026-06-30 21:56:18,869] [INFO] [CONTROL]  * Thread: pump_06 finished.
+[2026-06-30 21:56:18,916] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:56:19,872] [INFO] [CONTROL]  * Thread: pump_07 finished.
+[2026-06-30 21:56:21,877] [INFO] [CONTROL]  * Thread: pump_08 finished.
+[2026-06-30 21:56:23,884] [INFO] [CONTROL]  * Thread: pump_09 finished.
+[2026-06-30 21:56:25,890] [INFO] [CONTROL]  * Thread: pump_10 finished.
+[2026-06-30 21:56:25,923] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:56:27,247] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:57:00,512] [INFO] [CONTROL] The index is : 0
+[2026-06-30 21:57:00,512] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:57:01,518] [INFO] [CONTROL] Drink requested: Test-1
+[2026-06-30 21:57:01,540] [INFO] [CONTROL] Starting to prepare Test-1
+[2026-06-30 21:57:01,540] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:57:01,542] [INFO] [CONTROL]  * Thread: pump_01 Started for 7 seconds.
+[2026-06-30 21:57:01,542] [INFO] [CONTROL]  * Thread: pump_02 Started for 8 seconds.
+[2026-06-30 21:57:01,543] [INFO] [CONTROL]  * Thread: pump_04 Started for 12 seconds.
+[2026-06-30 21:57:01,543] [INFO] [CONTROL]  * Thread: pump_03 Started for 10 seconds.
+[2026-06-30 21:57:01,543] [INFO] [CONTROL]  * Thread: pump_05 Started for 14 seconds.
+[2026-06-30 21:57:08,551] [INFO] [CONTROL]  * Thread: pump_01 finished.
+[2026-06-30 21:57:08,614] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:57:09,554] [INFO] [CONTROL]  * Thread: pump_02 finished.
+[2026-06-30 21:57:11,555] [INFO] [CONTROL]  * Thread: pump_03 finished.
+[2026-06-30 21:57:13,558] [INFO] [CONTROL]  * Thread: pump_04 finished.
+[2026-06-30 21:57:15,559] [INFO] [CONTROL]  * Thread: pump_05 finished.
+[2026-06-30 21:57:15,622] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:57:16,795] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:57:32,875] [INFO] [CONTROL] The index is : 1
+[2026-06-30 21:57:32,875] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:57:33,881] [INFO] [CONTROL] Drink requested: Test-2
+[2026-06-30 21:57:33,910] [INFO] [CONTROL] Starting to prepare Test-2
+[2026-06-30 21:57:33,911] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:57:33,912] [INFO] [CONTROL]  * Thread: pump_06 Started for 7 seconds.
+[2026-06-30 21:57:33,912] [INFO] [CONTROL]  * Thread: pump_07 Started for 8 seconds.
+[2026-06-30 21:57:33,913] [INFO] [CONTROL]  * Thread: pump_08 Started for 10 seconds.
+[2026-06-30 21:57:33,913] [INFO] [CONTROL]  * Thread: pump_09 Started for 12 seconds.
+[2026-06-30 21:57:33,914] [INFO] [CONTROL]  * Thread: pump_10 Started for 14 seconds.
+[2026-06-30 21:57:40,922] [INFO] [CONTROL]  * Thread: pump_06 finished.
+[2026-06-30 21:57:40,989] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:57:41,924] [INFO] [CONTROL]  * Thread: pump_07 finished.
+[2026-06-30 21:57:43,929] [INFO] [CONTROL]  * Thread: pump_08 finished.
+[2026-06-30 21:57:45,930] [INFO] [CONTROL]  * Thread: pump_09 finished.
+[2026-06-30 21:57:47,931] [INFO] [CONTROL]  * Thread: pump_10 finished.
+[2026-06-30 21:57:47,997] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:57:49,145] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:58:05,228] [INFO] [CONTROL] The index is : 2
+[2026-06-30 21:58:05,229] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:58:06,234] [INFO] [CONTROL] Drink requested: Test-3
+[2026-06-30 21:58:06,260] [INFO] [CONTROL] Starting to prepare Test-3
+[2026-06-30 21:58:06,260] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:58:06,261] [INFO] [CONTROL]  * Thread: pump_11 Started for 7 seconds.
+[2026-06-30 21:58:06,261] [INFO] [CONTROL]  * Thread: pump_12 Started for 8 seconds.
+[2026-06-30 21:58:06,262] [INFO] [CONTROL]  * Thread: pump_13 Started for 10 seconds.
+[2026-06-30 21:58:06,262] [INFO] [CONTROL]  * Thread: pump_14 Started for 12 seconds.
+[2026-06-30 21:58:06,263] [INFO] [CONTROL]  * Thread: pump_15 Started for 14 seconds.
+[2026-06-30 21:58:13,270] [INFO] [CONTROL]  * Thread: pump_11 finished.
+[2026-06-30 21:58:13,328] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:58:14,271] [INFO] [CONTROL]  * Thread: pump_12 finished.
+[2026-06-30 21:58:16,274] [INFO] [CONTROL]  * Thread: pump_13 finished.
+[2026-06-30 21:58:18,277] [INFO] [CONTROL]  * Thread: pump_14 finished.
+[2026-06-30 21:58:20,278] [INFO] [CONTROL]  * Thread: pump_15 finished.
+[2026-06-30 21:58:20,338] [INFO] [CONTROL]  * Thread: pump_16 finished.
+[2026-06-30 21:58:21,476] [INFO] [CONTROL] Finished. Cleaning up status file.
+[2026-06-30 21:58:37,555] [INFO] [CONTROL] The index is : 0
+[2026-06-30 21:58:37,555] [INFO] [CONTROL] The drink list is :['Test-1', 'Test-2', 'Test-3']
+[2026-06-30 21:58:38,561] [INFO] [CONTROL] Drink requested: Test-1
+[2026-06-30 21:58:38,586] [INFO] [CONTROL] Starting to prepare Test-1
+[2026-06-30 21:58:38,586] [INFO] [CONTROL] Total Runtime: 15
+[2026-06-30 21:58:38,587] [INFO] [CONTROL]  * Thread: pump_01 Started for 7 seconds.
+[2026-06-30 21:58:38,587] [INFO] [CONTROL]  * Thread: pump_02 Started for 8 seconds.
+[2026-06-30 21:58:38,588] [INFO] [CONTROL]  * Thread: pump_03 Started for 10 seconds.
+[2026-06-30 21:58:38,588] [INFO] [CONTROL]  * Thread: pump_04 Started for 12 seconds.
+[2026-06-30 21:58:38,588] [INFO] [CONTROL]  * Thread: pump_05 Started for 14 seconds.
+[2026-06-30 21:58:45,595] [INFO] [CONTROL]  * Thread: pump_01 finished.
+[2026-06-30 21:58:45,669] [INFO] [CONTROL]  * Thread: pump_16 Started for 7 seconds.
+[2026-06-30 21:58:46,601] [INFO] [CONTROL]  * Thread: pump_02 finished.
+[2026-06-30 21:58:48,606] [INFO] [CONTROL]  * Thread: pump_03 finished.
+[2026-06-30 21:58:50,606] [INFO] [CONTROL]  * Thread: pump_04 finished.
+[2026-06-30 21:58:52,622] [INFO] [CONTROL]  * Thread: pump_05 finished.
+[2026-06-30 21:58:52,686] [INFO] [CONTROL]  * Thread: pump_16 finished.

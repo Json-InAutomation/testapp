@@ -134,8 +134,10 @@
           mixer = 'mixer-test1'
         } else if (drink_name === 'Test-2') {
           mixer = 'mixer-test2'
+          document.getElementById("test1").style.borderColor = "1px solid #7D3661";
         } else {
           mixer = 'mixer-test3'
+          document.getElementById("test1").style.borderColor = "1px solid #7D3661"
         }
         if (p === 'pump_16' && mixer) {
           $('#' + mixer).addClass('active');
@@ -162,12 +164,27 @@
             $('#sim-progress-bar').css('width', '0%');
             setAllPumpsIdle();
             $('#drink-label').html('0%');
+            ["test1", "test2", "test3"].forEach(id => {
+              document.getElementById(id).style.border = "1px solid transparent";
+            });
 
           } else if (data.percent_done > 0 && data.percent_done < 100) {
             updateBadge('pouring', '● Pouring');
             $('#info-line').html('Making <strong>' + (data.drink_name || '…') + '</strong>');
             $('#sim-progress-bar').css('width', data.percent_done + '%');
             activatePumps(data.active_pumps, data.drink_name);
+            ["test1", "test2", "test3"].forEach(id => {
+              document.getElementById(id).style.border = "1px solid transparent";
+            });
+
+            if (data.drink_name === 'Test-1') {
+              document.getElementById("test1").style.border = "1px solid #7D3661";
+            } else if (data.drink_name === 'Test-2') {
+              document.getElementById("test2").style.border = "1px solid #7D3661";
+            } else {
+              document.getElementById("test3").style.border = "1px solid #7D3661";
+            }
+
             $('#drink-label').html(data.percent_done + '%');
           } else {
             updateBadge('standby', '● Standby');
