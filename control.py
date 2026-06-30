@@ -11,8 +11,8 @@
 # *****************************************
 
 # Set this to False on Raspberry Pi Host ()
-# prototype_mode = True
-prototype_mode = True # Comment out for normal operation
+prototype_mode = False
+# prototype_mode = True # Comment out for normal operation
 # *****************************************
 # Imported Libraries
 # *****************************************
