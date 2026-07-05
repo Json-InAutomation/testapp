@@ -12331,7 +12331,7 @@ button:focus {
 }
 
 .sim-wrapper {
-  max-width: 1050px;
+  max-width: 1800px;
   margin: 0 auto;
   padding: 30px 16px 60px;
   height: 74%;
@@ -12418,6 +12418,10 @@ button:focus {
   transition: width 0.8s ease;
   color: white;
   border-radius: 4px;
+  height: 117%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ── Machine cards ── */
@@ -12478,7 +12482,7 @@ button:focus {
 .pumps {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 30px;
+  gap: 51px;
   margin-bottom: 14px;
 }
 
@@ -12503,7 +12507,7 @@ button:focus {
   padding: 10px;
   border-radius: 4px;
   text-align: center;
-  font-size: 12px;
+  font-size: 19px;
   border: none;
 }
 
@@ -12523,7 +12527,7 @@ button:focus {
 .mixer-bar {
   background: #DDE2EA;
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   border-radius: 3px;
   text-align: center;
   font-weight: 500;
@@ -12541,7 +12545,6 @@ button:focus {
   text-align: center;
   font-size: 0.95rem;
   color: white;
-  margin-top: 14px;
 }
 
 #drink-label strong {
